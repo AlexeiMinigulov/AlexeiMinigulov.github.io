@@ -68,8 +68,8 @@
 	__webpack_require__(9)(app);
 	
 	// modules
-	__webpack_require__(27)(app);
-	__webpack_require__(32)(app);
+	__webpack_require__(12)(app);
+	__webpack_require__(19)(app);
 	
 	/*app.run(function($rootScope, Auth, $state){
 	    $rootScope.$on('$stateChangeStart',
@@ -215,10 +215,81 @@
 	module.exports=v1;
 
 /***/ },
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = function (app) {
+	
+	    app.controller('dashboardCtrl', __webpack_require__(13));
+	
+	    app.config(function ($stateProvider) {
+	
+	        $stateProvider.state('dashboard', {
+	            url: '/dashboard',
+	            template: __webpack_require__(18),
+	            controller: 'dashboardCtrl as vm'
+	        });
+	    });
+	
+	    //app.directive('dashboard', require('./dashboard'));
+	};
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(14);
+	
+	module.exports = function dashboardCtrl() {
+	
+	    if (true) console.log('Dashboard link');
+	};
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(15);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(17)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(16)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "h1 {\r\n    color: red;\r\n    transform: rotateY(30deg);\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 16 */
 /***/ function(module, exports) {
 
@@ -527,79 +598,7 @@
 
 
 /***/ },
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	module.exports = function (app) {
-	
-	    app.controller('dashboardCtrl', __webpack_require__(37));
-	
-	    app.config(function ($stateProvider) {
-	
-	        $stateProvider.state('dashboard', {
-	            url: '/dashboard',
-	            template: __webpack_require__(31),
-	            controller: 'dashboardCtrl as vm'
-	        });
-	    });
-	
-	    //app.directive('dashboard', require('./dashboard'));
-	};
-
-/***/ },
-/* 28 */,
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(30);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(17)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(16)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "h1 {\r\n    color: red;\r\n    transform: rotateY(30deg);\r\n}", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 31 */
+/* 18 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -610,35 +609,35 @@
 	module.exports=v1;
 
 /***/ },
-/* 32 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(33);
+	    __webpack_require__(20);
 	
-	    app.controller('usersCtrl', __webpack_require__(35));
+	    app.controller('usersCtrl', __webpack_require__(22));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('users', {
 	            url: '/users',
-	            template: __webpack_require__(36),
+	            template: __webpack_require__(23),
 	            controller: 'usersCtrl as vm'
 	        });
 	    });
 	};
 
 /***/ },
-/* 33 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(34);
+	var content = __webpack_require__(21);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(17)(content, {});
@@ -658,7 +657,7 @@
 	}
 
 /***/ },
-/* 34 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(16)();
@@ -672,7 +671,7 @@
 
 
 /***/ },
-/* 35 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -680,7 +679,7 @@
 	module.exports = function () {};
 
 /***/ },
-/* 36 */
+/* 23 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -689,19 +688,6 @@
 	var v1="<p>BlaBla</p>";
 	ngModule.run(["$templateCache",function(c){c.put("src/users/users.html",v1)}]);
 	module.exports=v1;
-
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(29);
-	
-	module.exports = function dashboardCtrl() {
-	
-	    if (true) console.log('Dashboard link');
-	};
 
 /***/ }
 /******/ ]);

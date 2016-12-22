@@ -3,6 +3,7 @@
 var webpack = require('webpack'),
     path = require('path'),
     sourcePath = path.join(__dirname, '/src'),
+    nodeModules = path.join(__dirname, '/node_modules'),
     outputPath = path.join(__dirname, '/dist');
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
@@ -86,3 +87,19 @@ module.exports = {
 
 
 };
+
+/*module.exports = {
+    context: nodeModules,
+
+    entry: {
+            'angular.min': 'angular/angular.min.js',
+            'angular-ui-router.min': 'angular-ui-router/release/angular-ui-router.min.js',
+            'jquery.min': 'jquery/dist/jquery.min.js',
+            'materialize.min': 'materialize-css/dist/js/materialize.min.js'
+    },
+
+    output: {
+        path: outputPath + '/js/library',
+        filename: '[name].js'
+    },
+};*/
