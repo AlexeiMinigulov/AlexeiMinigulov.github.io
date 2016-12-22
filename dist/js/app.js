@@ -123,7 +123,20 @@
 	
 	    return {
 	        restrict: 'E',
-	        template: __webpack_require__(5)
+	        template: __webpack_require__(5),
+	        link: function link(scope) {
+	
+	            scope.showSideNav = function () {
+	                var slideOut = $('#slide-out'),
+	                    paranga = $('.paranga');
+	                slideOut.css('transform', 'translateX(0%)');
+	                paranga.css('display', 'block');
+	                paranga.click(function (e) {
+	                    slideOut.css('transform', '');
+	                    paranga.css('display', '');
+	                });
+	            };
+	        }
 	    };
 	};
 
@@ -134,7 +147,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<nav class=\"top-nav fixed\"> <div class=\"container\"> <div class=\"nav-wrapper\"> <a class=\"page-title\">SideNav</a> </div> </div> </nav>";
+	var v1="<nav class=\"top-nav fixed\"> <div class=\"container\"> <div class=\"nav-wrapper\"> <i class=\"material-icons waves-effect\" ng-click=\"showSideNav()\">reorder</i>\n<a class=\"page-title\">SideNav</a> </div> </div> </nav>";
 	ngModule.run(["$templateCache",function(c){c.put("_common/ms-toolbar/template.html",v1)}]);
 	module.exports=v1;
 

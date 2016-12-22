@@ -29,15 +29,7 @@ header {
   height: 65px;
   z-index: 2;
 }
-main {
-  position: relative;
-  top: 65px;
-}
-.side-nav.fixed {
-  display: inline-block;
-  position: fixed;
-}
-.container {
+.container {  /* обший контейнер для верхнего тулбара и сайднав */
   display: inline-block;
   position: absolute;
   z-index: 1;
@@ -48,10 +40,36 @@ main {
   top: 0px;
   padding: 0 40px;
 }
+.top-nav.fixed > .container > .nav-wrapper > * {
+    float: left;
+}
+.top-nav.fixed > .container > .nav-wrapper > *:first-child {
+  display: none;
+  margin-right: 40px;
+}
+main {
+  position: relative;
+  top: 65px;
+}
+.side-nav.fixed {
+  display: inline-block;
+  position: fixed;
+  transition: transform .24s ease-out 0s;;
+}
 @media only screen and (max-width : 992px) {
   .container {
     left: 0;
+    max-width: 90%;
     padding: 0 0px;
+  }
+  .top-nav.fixed > .container > .nav-wrapper > i {
+    display: inline-block !important;
+    margin-top: 10px;
+    height: 40px !important;
+    width: 40px;
+    line-height: 40px !important;
+    border-radius: 100%;
+    text-align: center;
   }
 }
 
@@ -388,4 +406,18 @@ select.browser-default {
   bottom: 0;
   display: inline-block;
   vertical-align: middle;
+}
+
+
+
+.paranga {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+
+  background-color: #000;
+  opacity: .5;
 }
