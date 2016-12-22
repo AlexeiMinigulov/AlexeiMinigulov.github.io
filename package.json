@@ -1,0 +1,28 @@
+{
+  "name": "super-shop",
+  "version": "1.0.0",
+  "description": "Admin Panel for online magazine \"Super Shop\"",
+  "main": "dist/js/app.js",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "materialize-css": "^0.97.8",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.25",
+    "css-loader": "^0.23.1",
+    "html-loader": "^0.4.3",
+    "ng-cache-loader": "0.0.14",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.14.0"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "Alexei Minigulov",
+  "license": "ISC"
+}
