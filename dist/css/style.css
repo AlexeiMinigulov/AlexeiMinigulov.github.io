@@ -1,12 +1,12 @@
-.side-nav .collapsible.collapsible-accordion > li > a {     /* Главные навигационные вкладки */
+/*.side-nav .collapsible.collapsible-accordion > li > a {
     padding-left: 30px;
 }
-.side-nav .collapsible.collapsible-accordion > li > .collapsible-body {     /* Поднавигационные вкладки */
+.side-nav .collapsible.collapsible-accordion > li > .collapsible-body {
     padding-left: 20px;
 }
 
 
-.top-nav {      /*   Toolbar    */
+.top-nav {
     position: fixed;
     padding-left: 300px;
 }
@@ -20,7 +20,41 @@ main {
       header, main, footer {
         padding-left: 0;
       }
-    }
+    }*/
+header {
+  position: relative;
+}
+.top-nav.fixed {
+  position: fixed;
+  height: 65px;
+  z-index: 2;
+}
+main {
+  position: relative;
+  top: 65px;
+}
+.side-nav.fixed {
+  display: inline-block;
+  position: fixed;
+}
+.container {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  max-width: 70%;
+  margin: 0 auto;
+  left: 300px;
+  right: 0;
+  top: 0px;
+  padding: 0 40px;
+}
+@media only screen and (max-width : 992px) {
+  .container {
+    left: 0;
+    padding: 0 0px;
+  }
+}
+
 
 
 .spinner {
@@ -298,6 +332,12 @@ li.created-field {    /*   Созданные поля для товара   */
 }
 li .collapsible-header {
   position: relative;
+  padding-left: 31px !important;
+}
+@media only screen and (max-width : 992px) {
+  li .collapsible-header {
+    padding-left: 15px !important;
+  }
 }
 li .collapsible-header .btn {
   position: absolute;
@@ -313,6 +353,9 @@ li .collapsible-header .btn {
 }
 li .collapsible-body {
   background-color: #fafafa;
+}
+li .collapsible-body a {
+  padding-left: 50px !important;
 }
 li.created-field .collapsible-body {
   padding: 40px 20px;
