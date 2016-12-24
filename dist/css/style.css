@@ -309,11 +309,6 @@ li .collapsible-header {
   position: relative;
   padding-left: 31px !important;
 }
-@media only screen and (max-width : 992px) {
-  li .collapsible-header {
-    padding-left: 15px !important;
-  }
-}
 li .collapsible-header .btn {
   position: absolute;
   line-height: 30px;
