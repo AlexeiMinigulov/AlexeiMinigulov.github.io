@@ -1,35 +1,14 @@
-/*.side-nav .collapsible.collapsible-accordion > li > a {
-    padding-left: 30px;
-}
-.side-nav .collapsible.collapsible-accordion > li > .collapsible-body {
-    padding-left: 20px;
-}
-
-
-.top-nav {
-    position: fixed;
-    padding-left: 300px;
-}
-
-
-main {
-    padding-left: 300px;
-    padding-top: 80px;
-}
-@media only screen and (max-width : 992px) {
-      header, main, footer {
-        padding-left: 0;
-      }
-    }*/
 header {
   position: relative;
 }
-.top-nav.fixed {
-  position: fixed;
-  height: 65px;
-  z-index: 2;
+
+
+
+main {
+  position: relative;
+  top: 65px;
 }
-.container {  /* обший контейнер для верхнего тулбара и сайднав */
+main .container {
   display: inline-block;
   position: absolute;
   z-index: 1;
@@ -40,38 +19,16 @@ header {
   top: 0px;
   padding: 0 40px;
 }
-.top-nav.fixed > .container > .nav-wrapper > * {
-    float: left;
-}
-.top-nav.fixed > .container > .nav-wrapper > *:first-child {
-  display: none;
-  margin-right: 40px;
-}
-main {
-  position: relative;
-  top: 65px;
-}
-.side-nav.fixed {
-  display: inline-block;
-  position: fixed;
-  transition: transform .24s ease-out 0s;;
-}
 @media only screen and (max-width : 992px) {
-  .container {
+  main .container {
     left: 0;
     max-width: 90%;
     padding: 0 0px;
   }
-  .top-nav.fixed > .container > .nav-wrapper > i {
-    display: inline-block !important;
-    margin-top: 10px;
-    height: 40px !important;
-    width: 40px;
-    line-height: 40px !important;
-    border-radius: 100%;
-    text-align: center;
-  }
 }
+
+
+
 
 
 
@@ -91,7 +48,7 @@ main {
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #53ade8;
+  background-color: #ee6e73;
   border-radius: 100%;
   
   -webkit-animation: sdk-bounce 2.0s infinite ease-in-out;
@@ -421,3 +378,4 @@ select.browser-default {
   background-color: #000;
   opacity: .5;
 }
+/*# sourceMappingURL=style.css.map*/
