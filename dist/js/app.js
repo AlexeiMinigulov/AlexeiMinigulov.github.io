@@ -43220,15 +43220,15 @@
 	module.exports = function (app) {
 	
 	    __webpack_require__(77);
-	    __webpack_require__(81)(app);
+	    __webpack_require__(79)(app);
 	
-	    app.controller('categoriesCtrl', __webpack_require__(79));
+	    app.controller('categoriesCtrl', __webpack_require__(84));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('categories', {
 	            url: '/categories?subcategory',
-	            template: __webpack_require__(80),
+	            template: __webpack_require__(85),
 	            data: {
 	                label: "Категории",
 	                parent: "dashboard"
@@ -43280,91 +43280,34 @@
 
 /***/ },
 /* 79 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function ($state, $stateParams, $rootScope, CategoriesFactory) {
-	
-		var categories = CategoriesFactory.get();
-	
-		var vm = this;
-	
-		vm.hasTable = hasTable;
-	
-		vm.createCategory = createCategory;
-	
-		var subcategory = $stateParams.subcategory;
-	
-		function hasTable(e, category) {
-	
-			if (category.hasOwnProperty("table_id")) {
-				e.preventDefault();
-			}
-		}
-	
-		function createCategory($event) {
-	
-			$event.preventDefault();
-			$state.go('categories.create');
-		}
-	
-		if (!subcategory) {
-	
-			vm.categories = categories.filter(function (value) {
-				return value.parent === null;
-			});
-		} else {
-	
-			vm.categories = categories.filter(function (value) {
-				return value.parent === subcategory;
-			});
-		}
-	
-		$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {});
-	};
-
-/***/ },
-/* 80 */
-/***/ function(module, exports) {
-
-	var angular=window.angular,ngModule;
-	try {ngModule=angular.module(["ng"])}
-	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div>";
-	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
-	module.exports=v1;
-
-/***/ },
-/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(82);
+	    __webpack_require__(80);
 	
-	    app.controller('createCtrl', __webpack_require__(84));
+	    app.controller('createCtrl', __webpack_require__(82));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('categories.create', {
 	            url: '/create',
-	            template: __webpack_require__(85),
+	            template: __webpack_require__(83),
 	            controller: 'createCtrl as vm'
 	        });
 	    });
 	};
 
 /***/ },
-/* 82 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(83);
+	var content = __webpack_require__(81);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43384,7 +43327,7 @@
 	}
 
 /***/ },
-/* 83 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43392,13 +43335,13 @@
 	
 	
 	// module
-	exports.push([module.id, ".modal.bottom-sheet {\r\n/* \tdisplay: block;\r\nposition: fixed;\r\nmax-width: 100%;\r\nheight: 0;\r\nbottom: 0;\r\nz-index: 9999;\r\nbackground-color: #ccc; */\r\n}", ""]);
+	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 84 */
+/* 82 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43446,7 +43389,7 @@
 	};
 
 /***/ },
-/* 85 */
+/* 83 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43454,6 +43397,63 @@
 	catch(e){ngModule=angular.module("ng",[])}
 	var v1=" <div id=\"modal-new-category\" class=\"modal bottom-sheet\"> <div class=\"modal-content\"> <div class=\"row\"> <div class=\"col s4 offset-s2\"> <h4>Создать новую категорию</h4> <form action=\"#\"> <div class=\"input-field\"> <input id=\"name\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.name\">  <label for=\"name\">Название</label> </div> <div class=\"input-field select2\"> <label>Materialize Select</label> <select ng-model=\"vm.newCategory.tableId\"> <option value=\"\" selected=\"selected\">Без привязки к таблице</option> <option ng-repeat=\"product in vm.listProducts\" value=\"{{product._id}}\">{{product.name}}</option> </select> </div> <div class=\"input-field\"> <input id=\"semantic-url\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.semanticUrl\">  <label for=\"semantic-url\">ЧПУ URL</label> </div> <div class=\"file-field input-field\"> <div class=\"btn\"> <span>Картинка</span> \n<input type=\"file\" file-model=\"vm.newCategory.logotype\"> </div> <div class=\"file-path-wrapper\"> <input class=\"file-path validate\" type=\"text\" placeholder=\"Загрузить изображение\"> </div> </div> <div class=\"input-field\"> <a class=\"waves-effect waves-light btn\" ng-click=\"vm.newCategorySubmit()\">Создать категорию</a> </div> </form> </div> </div> </div> <div class=\"modal-footer\"> <a ui-sref=\"#\" ng-click=\"vm.closeModalCategory($event)\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Back</a> </div> </div> <div class=\"modal-overlay\"></div>";
 	ngModule.run(["$templateCache",function(c){c.put("categories/create/create.html",v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 84 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function ($state, $stateParams, $rootScope, CategoriesFactory) {
+	
+		var categories = CategoriesFactory.get();
+	
+		var vm = this;
+	
+		vm.hasTable = hasTable;
+	
+		vm.createCategory = createCategory;
+	
+		var subcategory = $stateParams.subcategory;
+	
+		function hasTable(e, category) {
+	
+			if (category.hasOwnProperty("table_id")) {
+				e.preventDefault();
+			}
+		}
+	
+		function createCategory($event) {
+	
+			$event.preventDefault();
+			$state.go('categories.create');
+		}
+	
+		if (!subcategory) {
+	
+			vm.categories = categories.filter(function (value) {
+				return value.parent === null;
+			});
+		} else {
+	
+			vm.categories = categories.filter(function (value) {
+				return value.parent === subcategory;
+			});
+		}
+	
+		$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {});
+	};
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+	var angular=window.angular,ngModule;
+	try {ngModule=angular.module(["ng"])}
+	catch(e){ngModule=angular.module("ng",[])}
+	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div>";
+	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
 	module.exports=v1;
 
 /***/ }

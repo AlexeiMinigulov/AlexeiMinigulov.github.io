@@ -107,17 +107,6 @@ main .container {
 
 
 
-.modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */
-  max-height: 56% !important;
-}
-.modal.bottom-sheet .modal-footer {
-  /*margin-bottom: 20px;*/
-  position: absolute;
-  top: 345px;
-  right: 0;
-  width: auto;
-}
-
 
 .well.breadcrumb {    /*  Хлебные крошки  */
   color: black;
