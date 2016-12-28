@@ -42503,45 +42503,57 @@
 	
 	module.exports = function CategoriesFactory() {
 	
-		var categories = [{
-			_id: "58137d49c4ca6f501400002f",
-			name: "Computer",
-			parent: null,
-			ancestors: [],
-			semanticUrl: "computers",
-			logotype: "computers.jpg"
-		}, {
-			_id: "58138a27c4ca6f5814000029",
-			name: "Apple",
-			parent: "58137d49c4ca6f501400002f",
-			ancestors: ["58137d49c4ca6f501400002f"],
-			semanticUrl: "apples ",
-			logotype: "1477675559daYTvwjKfs.jpg"
-		}, {
-			_id: "58138a40c4ca6f581400002a",
-			name: "Acer",
-			parent: "58137d49c4ca6f501400002f",
-			ancestors: ["58137d49c4ca6f501400002f"],
-			semanticUrl: "acers ",
-			logotype: "1477675584DziI0wI2hIM.jpg"
-		}, {
-			_id: "58139f27c4ca6f581400002b",
-			name: "TV LG",
-			parent: "58138a40c4ca6f581400002a",
-			ancestors: ["58137d49c4ca6f501400002f", "58138a40c4ca6f581400002a"],
-			semanticUrl: "tv-lg",
-			table_id: "580cee19c4ca6f140f000029",
-			logotype: "14776809358 a6d9bad25950646b9d2f25dc1ec46dddd8bd4825600712c1353b05169153cf3.jpg"
-		}];
+													var modelHeightCreate;
 	
-		return {
+													var categories = [{
+																									_id: "58137d49c4ca6f501400002f",
+																									name: "Computer",
+																									parent: null,
+																									ancestors: [],
+																									semanticUrl: "computers",
+																									logotype: "computers.jpg"
+													}, {
+																									_id: "58138a27c4ca6f5814000029",
+																									name: "Apple",
+																									parent: "58137d49c4ca6f501400002f",
+																									ancestors: ["58137d49c4ca6f501400002f"],
+																									semanticUrl: "apples ",
+																									logotype: "1477675559daYTvwjKfs.jpg"
+													}, {
+																									_id: "58138a40c4ca6f581400002a",
+																									name: "Acer",
+																									parent: "58137d49c4ca6f501400002f",
+																									ancestors: ["58137d49c4ca6f501400002f"],
+																									semanticUrl: "acers ",
+																									logotype: "1477675584DziI0wI2hIM.jpg"
+													}, {
+																									_id: "58139f27c4ca6f581400002b",
+																									name: "TV LG",
+																									parent: "58138a40c4ca6f581400002a",
+																									ancestors: ["58137d49c4ca6f501400002f", "58138a40c4ca6f581400002a"],
+																									semanticUrl: "tv-lg",
+																									table_id: "580cee19c4ca6f140f000029",
+																									logotype: "14776809358 a6d9bad25950646b9d2f25dc1ec46dddd8bd4825600712c1353b05169153cf3.jpg"
+													}];
 	
-			get: function get() {
+													return {
 	
-				return categories;
-			}
+																									get: function get() {
 	
-		};
+																																					return categories;
+																									},
+	
+																									setModelHeightCreate: function setModelHeightCreate(val) {
+	
+																																					modelHeightCreate = val;
+																									},
+	
+																									getModelHeightCreate: function getModelHeightCreate() {
+	
+																																					return modelHeightCreate;
+																									}
+	
+													};
 	};
 
 /***/ },
@@ -43345,7 +43357,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
+	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -43356,7 +43368,7 @@
 
 	'use strict';
 	
-	module.exports = function ($rootScope, $timeout, $state) {
+	module.exports = function ($rootScope, $timeout, $state, CategoriesFactory) {
 	
 		var vm = this;
 	
@@ -43364,7 +43376,7 @@
 	
 		loadModal();
 	
-		document.querySelector('.category-paranga').onclick = function (e) {
+		document.querySelector('.paranga').onclick = function (e) {
 			closeModal();
 		};
 	
@@ -43375,10 +43387,20 @@
 			$('nav.top-nav.fixed').css('z-index', '1');
 	
 			// For set paranga
-			$('header').css({ "position": "relative", "z-index": "0" });
-			$('main').css({ "position": "relative", "z-index": "2" });
-			$('body').css("overflow", "hidden");
-			$('.category-paranga').css('display', 'block');
+			$timeout(function () {
+				$('.paranga').css('display', 'block');
+			}, 300);
+			//  Second query no found property offsetHeight
+			try {
+				var modelHeightCreate = document.querySelector('#modal-new-category').offsetHeight;
+			} catch (e) {
+				modelHeightCreate = CategoriesFactory.getModelHeightCreate();
+			}
+			if (modelHeightCreate) {
+				CategoriesFactory.setModelHeightCreate(modelHeightCreate);
+			}
+			//modelHeightCreate += 14;
+			$('.paranga').css('bottom', modelHeightCreate + 'px');
 		}
 	
 		function closeModal() {
@@ -43388,10 +43410,8 @@
 			$('nav.top-nav.fixed').css('z-index', '');
 	
 			// For set paranga
-			$('header').css({ "position": "", "z-index": "" });
-			$('main').css({ "position": "", "z-index": "" });
-			$('body').css("overflow", "");
-			$('.category-paranga').css('display', '');
+			$('.paranga').css('display', '');
+			$('.paranga').css('bottom', '');
 	
 			$timeout(function () {
 				$state.go('categories');
