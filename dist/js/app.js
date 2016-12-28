@@ -42822,7 +42822,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<header> <ms-toolbar></ms-toolbar> </header> <main> <ms-sidenav></ms-sidenav> <div class=\"container\"> <ms-bread-crumbs></ms-bread-crumbs> <ui-view></ui-view> </div> </main>";
+	var v1="<header> <ms-toolbar></ms-toolbar> <ms-sidenav></ms-sidenav> </header> <main> <div class=\"container\"> <ms-bread-crumbs></ms-bread-crumbs> <ui-view></ui-view> </div> </main>";
 	ngModule.run(["$templateCache",function(c){c.put("_common/ms-layout/template.html",v1)}]);
 	module.exports=v1;
 
@@ -43273,7 +43273,7 @@
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".category-paranga {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: -130px;\r\n\tleft: -370px;\r\n\tright: 0;\r\n\tbottom: -300px;\r\n\twidth: 173%;\r\n\tmargin: auto;\r\n\tmargin-top: -300px;\r\n\tmargin-right: -300px;\r\n\tmargin-bottom: -500px;\r\n\topacity: .3;\r\n\tz-index: 1;\r\n\tbackground-color: #000;\r\n}\r\n@media only screen and (max-width : 1300px) {\r\n\t.category-paranga {\r\n\t\tright: 150px;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -43335,7 +43335,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tbottom: 15px !important;\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -43359,6 +43359,12 @@
 			$('#modal-new-category').openModal();
 			$('#slide-out').css('z-index', '1');
 			$('nav.top-nav.fixed').css('z-index', '1');
+	
+			// For set paranga
+			$('header').css({ "position": "relative", "z-index": "0" });
+			$('main').css({ "position": "relative", "z-index": "2" });
+			$('body').css("overflow", "hidden");
+			$('.category-paranga').css('display', 'block');
 		}
 	
 		function closeModal() {
@@ -43366,6 +43372,13 @@
 			$('#modal-new-category').closeModal();
 			$('#slide-out').css('z-index', '');
 			$('nav.top-nav.fixed').css('z-index', '');
+	
+			// For set paranga
+			$('header').css({ "position": "", "z-index": "" });
+			$('main').css({ "position": "", "z-index": "" });
+			$('body').css("overflow", "");
+			$('.category-paranga').css('display', '');
+	
 			$timeout(function () {
 				$state.go('categories');
 			}, 200);
@@ -43395,7 +43408,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1=" <div id=\"modal-new-category\" class=\"modal bottom-sheet\"> <div class=\"modal-content\"> <div class=\"row\"> <div class=\"col s4 offset-s2\"> <h4>Создать новую категорию</h4> <form action=\"#\"> <div class=\"input-field\"> <input id=\"name\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.name\">  <label for=\"name\">Название</label> </div> <div class=\"input-field select2\"> <label>Materialize Select</label> <select ng-model=\"vm.newCategory.tableId\"> <option value=\"\" selected=\"selected\">Без привязки к таблице</option> <option ng-repeat=\"product in vm.listProducts\" value=\"{{product._id}}\">{{product.name}}</option> </select> </div> <div class=\"input-field\"> <input id=\"semantic-url\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.semanticUrl\">  <label for=\"semantic-url\">ЧПУ URL</label> </div> <div class=\"file-field input-field\"> <div class=\"btn\"> <span>Картинка</span> \n<input type=\"file\" file-model=\"vm.newCategory.logotype\"> </div> <div class=\"file-path-wrapper\"> <input class=\"file-path validate\" type=\"text\" placeholder=\"Загрузить изображение\"> </div> </div> <div class=\"input-field\"> <a class=\"waves-effect waves-light btn\" ng-click=\"vm.newCategorySubmit()\">Создать категорию</a> </div> </form> </div> </div> </div> <div class=\"modal-footer\"> <a ui-sref=\"#\" ng-click=\"vm.closeModalCategory($event)\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Back</a> </div> </div> <div class=\"modal-overlay\"></div>";
+	var v1=" <div id=\"modal-new-category\" class=\"modal bottom-sheet\"> <div class=\"modal-content\"> <div class=\"row\"> <div class=\"col s4 offset-s2\"> <h4>Создать новую категорию</h4> <form action=\"#\"> <div class=\"input-field\"> <input id=\"name\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.name\">  <label for=\"name\">Название</label> </div> <div class=\"input-field select2\"> <label>Materialize Select</label> <select ng-model=\"vm.newCategory.tableId\"> <option value=\"\" selected=\"selected\">Без привязки к таблице</option> <option ng-repeat=\"product in vm.listProducts\" value=\"{{product._id}}\">{{product.name}}</option> </select> </div> <div class=\"input-field\"> <input id=\"semantic-url\" type=\"text\" class=\"validate\" ng-model=\"vm.newCategory.semanticUrl\">  <label for=\"semantic-url\">ЧПУ URL</label> </div> <div class=\"file-field input-field\"> <div class=\"btn\"> <span>Картинка</span> \n<input type=\"file\" file-model=\"vm.newCategory.logotype\"> </div> <div class=\"file-path-wrapper\"> <input class=\"file-path validate\" type=\"text\" placeholder=\"Загрузить изображение\"> </div> </div> <div class=\"input-field\"> <a class=\"waves-effect waves-light btn\" ng-click=\"vm.newCategorySubmit()\">Создать категорию</a> </div> </form> </div> </div> </div> <div class=\"modal-footer\"> <a ui-sref=\"#\" ng-click=\"vm.closeModalCategory($event)\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Back</a> </div> </div>";
 	ngModule.run(["$templateCache",function(c){c.put("categories/create/create.html",v1)}]);
 	module.exports=v1;
 
@@ -43452,7 +43465,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div>";
+	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> <div class=\"category-paranga\"></div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
 	module.exports=v1;
 
