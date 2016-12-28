@@ -43385,9 +43385,14 @@
 			closeModal();
 		};
 	
-		window.addEventListener("orientationchange", function () {
+		/*window.addEventListener("orientationchange", function() {
+	     setHeightParanga();
+	 });*/
+		window.addEventListener("resize", resizeCreateCategory);
+	
+		function resizeCreateCategory() {
 			setHeightParanga();
-		});
+		}
 	
 		function newCategorySubmit() {}
 	
@@ -43439,6 +43444,8 @@
 			// For set paranga
 			$('.paranga').css('display', '');
 			$('.paranga').css('bottom', '');
+	
+			window.removeEventListener("resize", resizeCreateCategory);
 	
 			$timeout(function () {
 				$state.go('categories');
