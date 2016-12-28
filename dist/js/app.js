@@ -42605,26 +42605,36 @@
 	
 	module.exports = function () {
 	
-	            return {
-	                        restrict: 'E',
-	                        template: __webpack_require__(50),
-	                        link: function link(scope) {
+	    return {
+	        restrict: 'E',
+	        template: __webpack_require__(50),
+	        link: function link(scope) {
 	
-	                                    scope.showSideNav = function () {
+	            var slideOut = $('#slide-out'),
+	                paranga = $('.paranga');
 	
-	                                                var slideOut = $('#slide-out'),
-	                                                    paranga = $('.paranga');
+	            function hideParanga() {
+	                slideOut.css('transform', '');
+	                paranga.css('display', '');
+	            }
 	
-	                                                slideOut.css('transform', 'translateX(0%)');
-	                                                paranga.css('display', 'block');
+	            scope.showSideNav = function () {
 	
-	                                                paranga.click(function (e) {
-	                                                            slideOut.css('transform', '');
-	                                                            paranga.css('display', '');
-	                                                });
-	                                    };
-	                        }
+	                slideOut.css('transform', 'translateX(0%)');
+	                paranga.css('display', 'block');
+	
+	                paranga.click(function (e) {
+	                    hideParanga();
+	                });
 	            };
+	
+	            document.getElementById('slide-out').onclick = function (e) {
+	
+	                if (e.target.hasAttribute('data-activates')) return;
+	                hideParanga();
+	            };
+	        }
+	    };
 	};
 
 /***/ },
@@ -42706,7 +42716,7 @@
 	    return {
 	        restrict: 'E',
 	        template: __webpack_require__(55),
-	        link: function link(scope, profileFactory) {
+	        link: function link(scope, profileFactory, element, attrs) {
 	
 	            $('.collapsible').collapsible();
 	        },
@@ -43353,6 +43363,10 @@
 		vm.closeModalCategory = closeModalCategory;
 	
 		loadModal();
+	
+		document.querySelector('.category-paranga').onclick = function (e) {
+			closeModal();
+		};
 	
 		function loadModal() {
 	
