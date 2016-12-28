@@ -43357,7 +43357,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n  /*height: 2000px;\r\n  max-height: 455px;*/\r\n}\r\n.modal.bottom-sheet .modal-footer {\r\n  /*margin-bottom: 20px;*/\r\n  /*position: absolute;\r\n  top: 345px;\r\n  right: 0;\r\n  width: auto;*/\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\t/*bottom: 15px !important;*/\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
+	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -43371,6 +43371,7 @@
 	module.exports = function ($rootScope, $timeout, $state, CategoriesFactory) {
 	
 		var vm = this;
+		var modelHeightCreate;
 	
 		vm.closeModalCategory = closeModalCategory;
 	
@@ -43379,6 +43380,23 @@
 		document.querySelector('.paranga').onclick = function (e) {
 			closeModal();
 		};
+	
+		window.addEventListener("orientationchange", function () {
+			setHeightParanga();
+		});
+	
+		function setHeightParanga() {
+	
+			try {
+				modelHeightCreate = document.querySelector('#modal-new-category').offsetHeight;
+			} catch (e) {
+				modelHeightCreate = CategoriesFactory.getModelHeightCreate();
+			}
+			if (modelHeightCreate) {
+				CategoriesFactory.setModelHeightCreate(modelHeightCreate);
+			}
+			$('.paranga').css('bottom', modelHeightCreate + 'px');
+		}
 	
 		function loadModal() {
 	
@@ -43391,16 +43409,7 @@
 				$('.paranga').css('display', 'block');
 			}, 300);
 			//  Second query no found property offsetHeight
-			try {
-				var modelHeightCreate = document.querySelector('#modal-new-category').offsetHeight;
-			} catch (e) {
-				modelHeightCreate = CategoriesFactory.getModelHeightCreate();
-			}
-			if (modelHeightCreate) {
-				CategoriesFactory.setModelHeightCreate(modelHeightCreate);
-			}
-			//modelHeightCreate += 14;
-			$('.paranga').css('bottom', modelHeightCreate + 'px');
+			setHeightParanga();
 		}
 	
 		function closeModal() {
