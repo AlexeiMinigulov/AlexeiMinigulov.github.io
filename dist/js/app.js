@@ -88,6 +88,7 @@
 	__webpack_require__(68)(app);
 	__webpack_require__(73)(app);
 	__webpack_require__(78)(app);
+	__webpack_require__(88)(app);
 	
 	/*app.run(function($rootScope, Auth, $state){
 	    $rootScope.$on('$stateChangeStart',
@@ -42743,7 +42744,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<ul id=\"slide-out\" class=\"side-nav fixed\"> <li class=\"profile\"> <ul> <li class=\"photo\"><img ng-src=\"{{::vm.profile.photo}}\"></li> <li class=\"name\"> <ul id=\"show-profile\" class=\"dropdown-content profile-content\"> <li><a href=\"#\">Профиль</a></li> <li><a href=\"#\">Настройки</a></li> <li><a href=\"#\">Помощь</a></li> <li><a href=\"#\">Выход</a></li> </ul> <a href=\"#!\" class=\"waves-effect waves-light dropdown-button\" data-activates=\"show-profile\"> <i class=\"fa fa-caret-down right\" aria-hidden=\"true\"></i>\n{{::vm.profile.firstName}} {{::vm.profile.lastName}} </a> </li> <li class=\"role\">{{::vm.profile.role}}</li> </ul> </li> <li><a ui-sref=\"dashboard\" class=\"waves-effect waves-teal logo\">Dashboard</a></li> <li><a ui-sref=\"categories({ subcategory: null })\" class=\"waves-effect waves-teal\">Категории</a></li> <li><a ui-sref=\"type-products\" class=\"waves-effect waves-teal\">Товары</a></li> <li class=\"no-padding\"> <ul class=\"collapsible collapsible-accordion\"> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Товары</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" href=\"#\">Ноутбуки</a></li> <li><a class=\"waves-effect\" href=\"#\">Телевизоры</a></li> <li><a class=\"waves-effect\" href=\"#\">Камеры</a></li> </ul> </div> </li> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Пользователи</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" href=\"#\">Список</a></li> <li><a class=\"waves-effect\" href=\"#\">Создать</a></li> <li><a class=\"waves-effect\" href=\"#\">Удалить</a></li> </ul> </div> </li> </ul> </li> </ul>";
+	var v1="<ul id=\"slide-out\" class=\"side-nav fixed\"> <li class=\"profile\"> <ul> <li class=\"photo\"><img ng-src=\"{{::vm.profile.photo}}\"></li> <li class=\"name\"> <ul id=\"show-profile\" class=\"dropdown-content profile-content\"> <li><a href=\"#\">Профиль</a></li> <li><a href=\"#\">Настройки</a></li> <li><a href=\"#\">Помощь</a></li> <li><a href=\"#\">Выход</a></li> </ul> <a href=\"#!\" class=\"waves-effect waves-light dropdown-button\" data-activates=\"show-profile\"> <i class=\"fa fa-caret-down right\" aria-hidden=\"true\"></i>\n{{::vm.profile.firstName}} {{::vm.profile.lastName}} </a> </li> <li class=\"role\">{{::vm.profile.role}}</li> </ul> </li> <li><a ui-sref=\"dashboard\" class=\"waves-effect waves-teal logo\">Dashboard</a></li> <li><a ui-sref=\"categories({ subcategory: null })\" class=\"waves-effect waves-teal\">Категории</a></li> <li class=\"no-padding\"> <ul class=\"collapsible collapsible-accordion\"> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Товары</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" ui-sref=\"type-products\">Виды товаров</a></li> <li><a class=\"waves-effect\" href=\"#\">Списки</a></li> <li><a class=\"waves-effect\" href=\"#\">Ед. измерения</a></li> </ul> </div> </li> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Пользователи</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" href=\"#\">Список</a></li> <li><a class=\"waves-effect\" href=\"#\">Создать</a></li> <li><a class=\"waves-effect\" href=\"#\">Удалить</a></li> </ul> </div> </li> </ul> </li> </ul>";
 	ngModule.run(["$templateCache",function(c){c.put("_common/ms-sidenav/template.html",v1)}]);
 	module.exports=v1;
 
@@ -43577,6 +43578,282 @@
 	catch(e){ngModule=angular.module("ng",[])}
 	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <div class=\"group-info-category\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> <div class=\"category-paranga\"></div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = function (app) {
+	
+	    __webpack_require__(89);
+	    app.factory('TypeProductsFactory', __webpack_require__(91));
+	
+	    app.controller('typeProductsCtrl', __webpack_require__(92));
+	
+	    app.config(function ($stateProvider) {
+	
+	        $stateProvider.state('type-products', {
+	            url: '/type-products',
+	            template: __webpack_require__(93),
+	            data: {
+	                label: "Виды товаров",
+	                parent: "dashboard"
+	            },
+	            controller: 'typeProductsCtrl as vm'
+	        });
+	    });
+	};
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(90);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".header {\r\n\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 80px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t}\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 91 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function TypeProductsFactory($http) {
+	
+		var typeProducts = [{
+			_id: "580cee19c4ca6f140f000029",
+			name: "TV",
+			semanticUrl: "televizory",
+			fields: [{
+				name: "Memory",
+				type: { "name": "string" }
+			}, {
+				name: "Size Scrine",
+				type: { "name": "string" }
+			}]
+		}, {
+			_id: "58442ccac4ca6f7014000029",
+			name: "Фотокамера",
+			semanticUrl: "fotokameri",
+			fields: [{
+				name: "Size1",
+				type: { name: "string" }
+			}, {
+				name: "Size2",
+				type: { name: "string" }
+			}, {
+				name: "Size3",
+				type: { name: "string" }
+			}]
+		}, {
+			_id: "580cee19c4ca6f140f000021",
+			name: "TV",
+			semanticUrl: "televizory",
+			fields: [{
+				name: "Memory",
+				type: { "name": "string" }
+			}, {
+				name: "Size Scrine",
+				type: { "name": "string" }
+			}]
+		}, {
+			_id: "58442ccac4ca6f7014000022",
+			name: "Фотокамера",
+			semanticUrl: "fotokameri",
+			fields: [{
+				name: "Size1",
+				type: { name: "string" }
+			}, {
+				name: "Size2",
+				type: { name: "string" }
+			}, {
+				name: "Size3",
+				type: { name: "string" }
+			}]
+		}, {
+			_id: "580cee19c4ca6f140f000023",
+			name: "TV",
+			semanticUrl: "televizory",
+			fields: [{
+				name: "Memory",
+				type: { "name": "string" }
+			}, {
+				name: "Size Scrine",
+				type: { "name": "string" }
+			}]
+		}, {
+			_id: "58442ccac4ca6f7014000024",
+			name: "Фотокамера",
+			semanticUrl: "fotokameri",
+			fields: [{
+				name: "Size1",
+				type: { name: "string" }
+			}, {
+				name: "Size2",
+				type: { name: "string" }
+			}, {
+				name: "Size3",
+				type: { name: "string" }
+			}]
+		}, {
+			_id: "580cee19c4ca6f140f000025",
+			name: "TV",
+			semanticUrl: "televizory",
+			fields: [{
+				name: "Memory",
+				type: { "name": "string" }
+			}, {
+				name: "Size Scrine",
+				type: { "name": "string" }
+			}]
+		}, {
+			_id: "58442ccac4ca6f7014000026",
+			name: "Фотокамера",
+			semanticUrl: "fotokameri",
+			fields: [{
+				name: "Size1",
+				type: { name: "string" }
+			}, {
+				name: "Size2",
+				type: { name: "string" }
+			}, {
+				name: "Size3",
+				type: { name: "string" }
+			}]
+		}];
+	
+		function get() {
+			return typeProducts;
+			//return $http.post( $rootScope.rootUrl + $rootScope.productsList );
+		}
+	
+		return {
+			get: get
+		};
+	};
+
+/***/ },
+/* 92 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function typeProductsCtrl($timeout, $scope, $state, TypeProductsFactory) {
+	
+		var vm = this;
+	
+		vm.typeProducts = [];
+	
+		vm.editTypeProduct = editTypeProduct;
+	
+		vm.selectCategory = selectCategory;
+	
+		vm.typeProducts = TypeProductsFactory.get();
+	
+		//if phone
+		if (document.documentElement.clientWidth <= 480) {
+	
+			$timeout(function () {
+				setHeightTypeProducts();
+			});
+		}
+	
+		function setHeightTypeProducts() {
+	
+			var collection = document.querySelector('.collection.type-products'),
+			    heightWindow = document.documentElement.clientHeight,
+			    heightFooter = document.querySelector('.footer').offsetHeight,
+			    topCollection = collection.getBoundingClientRect().top,
+			    colletMargBot = parseInt(getComputedStyle(collection).marginBottom),
+			    heightCollection;
+	
+			console.dir(heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
+			heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
+			collection.style.height = heightCollection + 'px';
+		}
+	
+		function editTypeProduct($event, typeProduct, $index) {
+	
+			$event.stopPropagation();
+			$event.preventDefault();
+	
+			/*$state.go('type-products.edit', {
+	  	id : typeProduct._id,
+	  	typeProduct : typeProduct,
+	  	$index : $index
+	  });*/
+		}
+	
+		function selectCategory(category) {
+			console.log("Click on: " + category.name);
+		}
+	
+		/*$scope.$on('newTypeProduct', function (event, data) {
+	 
+	 	vm.typeProducts.push(data);
+	 });*/
+	
+		/*$scope.$on('editTypeProduct', function (event, data, $index) {
+	 
+	 	// Если значение не изменяется из за перезагрузки
+	 	if( !$index ) {
+	 
+	 		for(var i = 0, length = vm.typeProducts.length; i < length; i++) {
+	 
+	 			if( vm.typeProducts[i]._id === data._id ) {
+	 
+	 				return vm.typeProducts[i] = data;
+	 			}
+	 		}
+	 	}
+	 
+	 });*/
+	};
+
+/***/ },
+/* 93 */
+/***/ function(module, exports) {
+
+	var angular=window.angular,ngModule;
+	try {ngModule=angular.module(["ng"])}
+	catch(e){ngModule=angular.module("ng",[])}
+	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"></div>";
+	ngModule.run(["$templateCache",function(c){c.put("src/type_products/typeProducts.html",v1)}]);
 	module.exports=v1;
 
 /***/ }
