@@ -85,9 +85,9 @@
 	__webpack_require__(62)(app);
 	
 	// modules
-	__webpack_require__(66)(app);
-	__webpack_require__(71)(app);
-	__webpack_require__(76)(app);
+	__webpack_require__(68)(app);
+	__webpack_require__(73)(app);
+	__webpack_require__(78)(app);
 	
 	/*app.run(function($rootScope, Auth, $state){
 	    $rootScope.$on('$stateChangeStart',
@@ -42856,13 +42856,55 @@
 	
 	module.exports = function (app) {
 	
-	    app.directive('msBreadCrumbs', __webpack_require__(63));
+	    __webpack_require__(63);
 	
-	    app.controller('breadCrumbsCtrl', __webpack_require__(65));
+	    app.directive('msBreadCrumbs', __webpack_require__(65));
+	
+	    app.controller('breadCrumbsCtrl', __webpack_require__(67));
 	};
 
 /***/ },
 /* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(64);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "ms-bread-crumbs li {\r\n  display: inline-block;\r\n  font-size: 18px;\r\n}\r\nms-bread-crumbs li::after {\r\n  content: '/';\r\n  display: inline-block;\r\n  margin: 0 10px;\r\n  color: #999;\r\n}\r\nms-bread-crumbs li:last-child::after {\r\n  display: none;\r\n}\r\nms-bread-crumbs li:last-child a{\r\n\tcolor: #999;\r\n\tcursor: default;\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42871,7 +42913,7 @@
 	
 							return {
 													restrict: 'E',
-													template: __webpack_require__(64),
+													template: __webpack_require__(66),
 	
 													compile: function compile(element, attributes) {
 	
@@ -43038,7 +43080,7 @@
 	};
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43049,7 +43091,7 @@
 	module.exports=v1;
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43060,20 +43102,20 @@
 	};
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = function (app) {
 	
-	    app.controller('dashboardCtrl', __webpack_require__(67));
+	    app.controller('dashboardCtrl', __webpack_require__(69));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('dashboard', {
 	            url: '/dashboard',
-	            template: __webpack_require__(70),
+	            template: __webpack_require__(72),
 	            data: {
 	                label: "Home"
 	            },
@@ -43085,12 +43127,12 @@
 	};
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(68);
+	__webpack_require__(70);
 	
 	module.exports = function dashboardCtrl() {
 	
@@ -43098,13 +43140,13 @@
 	};
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(69);
+	var content = __webpack_require__(71);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43124,7 +43166,7 @@
 	}
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43138,7 +43180,7 @@
 
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43149,22 +43191,22 @@
 	module.exports=v1;
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(72);
+	    __webpack_require__(74);
 	
-	    app.controller('usersCtrl', __webpack_require__(74));
+	    app.controller('usersCtrl', __webpack_require__(76));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('users', {
 	            url: '/users',
-	            template: __webpack_require__(75),
+	            template: __webpack_require__(77),
 	            data: {
 	                label: "Clients",
 	                parent: "dashboard"
@@ -43175,13 +43217,13 @@
 	};
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(73);
+	var content = __webpack_require__(75);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43201,7 +43243,7 @@
 	}
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43215,7 +43257,7 @@
 
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43223,7 +43265,7 @@
 	module.exports = function () {};
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43234,23 +43276,23 @@
 	module.exports=v1;
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(77);
-	    __webpack_require__(79)(app);
+	    __webpack_require__(79);
+	    __webpack_require__(81)(app);
 	
-	    app.controller('categoriesCtrl', __webpack_require__(84));
+	    app.controller('categoriesCtrl', __webpack_require__(86));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('categories', {
 	            url: '/categories?subcategory',
-	            template: __webpack_require__(85),
+	            template: __webpack_require__(87),
 	            data: {
 	                label: "Категории",
 	                parent: "dashboard"
@@ -43261,13 +43303,13 @@
 	};
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(78);
+	var content = __webpack_require__(80);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43287,7 +43329,7 @@
 	}
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43295,41 +43337,41 @@
 	
 	
 	// module
-	exports.push([module.id, ".category-paranga {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: -130px;\r\n\tleft: -370px;\r\n\tright: 0;\r\n\tbottom: -300px;\r\n\twidth: 173%;\r\n\tmargin: auto;\r\n\tmargin-top: -300px;\r\n\tmargin-right: -300px;\r\n\tmargin-bottom: -500px;\r\n\topacity: .3;\r\n\tz-index: 1;\r\n\tbackground-color: #000;\r\n}\r\n@media only screen and (max-width : 1300px) {\r\n\t.category-paranga {\r\n\t\tright: 150px;\r\n\t}\r\n}\r\n", ""]);
+	exports.push([module.id, ".category-paranga {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: -130px;\r\n\tleft: -370px;\r\n\tright: 0;\r\n\tbottom: -300px;\r\n\twidth: 173%;\r\n\tmargin: auto;\r\n\tmargin-top: -300px;\r\n\tmargin-right: -300px;\r\n\tmargin-bottom: -500px;\r\n\topacity: .3;\r\n\tz-index: 1;\r\n\tbackground-color: #000;\r\n}\r\n@media only screen and (max-width : 1300px) {\r\n\t.category-paranga {\r\n\t\tright: 150px;\r\n\t}\r\n}\r\n\r\n.collection.categories {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.categories > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category > * {\r\n\t\r\n}\r\n.collection.categories > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 75%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n}\r\n@media only screen and (max-width : 725px) and (min-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0 5px;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin-right: 5px;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(80);
+	    __webpack_require__(82);
 	
-	    app.controller('createCtrl', __webpack_require__(82));
+	    app.controller('createCtrl', __webpack_require__(84));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('categories.create', {
 	            url: '/create',
-	            template: __webpack_require__(83),
+	            template: __webpack_require__(85),
 	            controller: 'createCtrl as vm'
 	        });
 	    });
 	};
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(81);
+	var content = __webpack_require__(83);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43349,7 +43391,7 @@
 	}
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43357,13 +43399,13 @@
 	
 	
 	// module
-	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n\r\n.input-field.select2 label {\r\n\ttop:-20px;\r\n}\r\n.input-field.select2 {\r\n\twidth: 100%;\r\n}\r\n.input-field.select2 span.select2 {\r\n\twidth: 100%;\r\n}", ""]);
+	exports.push([module.id, ".modal.bottom-sheet {     /* Модальное окно для создание ноаой категории */\r\n\r\n}\r\n.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\tfloat: none;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n@media only screen and (max-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 97%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 480px) and (min-width : 320px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 80%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 680px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet {\r\n\t\tmax-height: 80% !important;\r\n\t}\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 70%;\r\n\t}\r\n}\r\n\r\n@media only screen and (max-width : 992px) and (min-width : 480px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2 {\r\n\t\twidth: 55%;\r\n\t}\r\n}\r\n\r\n@media only screen and (min-width : 992px) {\r\n\t.modal.bottom-sheet .modal-content > .row > .col.s4.offset-s2{\r\n\t\twidth: 40%;\r\n\t}\r\n}\r\n\r\n/* Desktops and laptops ----------- */\r\n@media only screen  and (min-width : 1224px) {\r\n\t.modal.bottom-sheet {\r\n\t  max-height: 455px;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43470,7 +43512,7 @@
 	};
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43481,7 +43523,7 @@
 	module.exports=v1;
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43527,13 +43569,13 @@
 	};
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> <div class=\"category-paranga\"></div>";
+	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <div class=\"group-info-category\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> <div class=\"category-paranga\"></div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
 	module.exports=v1;
 

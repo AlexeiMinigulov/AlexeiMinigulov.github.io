@@ -108,35 +108,17 @@ main .container {
 
 
 
-.well.breadcrumb {    /*  Хлебные крошки  */
-  color: black;
-  display: none;
-}
-.well.breadcrumb > li {
-  display: inline-block;
-}
-.well.breadcrumb > li .divider {
-  background-color: white;
-}
 
-ms-bread-crumbs li {
-  display: inline-block;
-}
-ms-bread-crumbs li::after {
-  content: '/';
-  display: inline-block;
-}
-ms-bread-crumbs li:last-child::after {
-  display: none;
-}
-
-
-.select2 {
+.input-field.select2 {
   margin-top: 15px;
+  width: 100%;
 }
 .input-field.select2 label {
   font-size: 15px;
-  top: -10px;
+  top:-20px;
+}
+.input-field.select2 span.select2 {
+  width: 100%;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected]{
   background: #16a085 !important;
