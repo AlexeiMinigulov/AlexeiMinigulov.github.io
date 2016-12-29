@@ -42644,6 +42644,7 @@
 	            document.getElementById('slide-out').onclick = function (e) {
 	
 	                if (e.target.hasAttribute('data-activates')) return;
+	                if (e.target.classList.contains('collapsible-header')) return;
 	                hideParanga();
 	            };
 	        }
@@ -43780,7 +43781,7 @@
 	
 		vm.editTypeProduct = editTypeProduct;
 	
-		vm.selectCategory = selectCategory;
+		vm.selectCategory = selectCategory();
 	
 		vm.typeProducts = TypeProductsFactory.get();
 	
@@ -43829,8 +43830,22 @@
 	  });*/
 		}
 	
-		function selectCategory(category) {
-			console.log("Click on: " + category.name);
+		function selectCategory() {
+			var groupButtons = document.querySelector('.footer > .group-buttons'),
+			    oldCategoryId = null,
+			    isActiveButtons = false;
+			return function (category) {
+	
+				if (oldCategoryId === category._id || oldCategoryId === null) {
+					Array.prototype.forEach.call(groupButtons.children, function (val) {
+						console.dir(val);
+						val.classList.toggle('disabled');
+						if (!val.classList.contains('disabled')) oldCategoryId = category._id;else oldCategoryId = null;
+					});
+				} else oldCategoryId = category._id;
+				//console.dir(groupButtons);
+				//console.log("Click on: " +category.name);
+			};
 		}
 	
 		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
@@ -43869,7 +43884,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
+	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">open_in_new</i><span>Показать таблицу</span></a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/type_products/typeProducts.html",v1)}]);
 	module.exports=v1;
 
