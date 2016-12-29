@@ -43505,8 +43505,7 @@
 	
 			if (toState.name === "categories.create") {
 				loadModal();
-			}
-			if (toState.name === "categories") {
+			} else {
 				closeModal();
 			}
 		});
@@ -43642,7 +43641,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\r\n\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 80px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".header {\r\n\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
@@ -43773,7 +43772,7 @@
 
 	'use strict';
 	
-	module.exports = function typeProductsCtrl($timeout, $scope, $state, TypeProductsFactory) {
+	module.exports = function typeProductsCtrl($rootScope, $timeout, $scope, $state, TypeProductsFactory) {
 	
 		var vm = this;
 	
@@ -43785,26 +43784,37 @@
 	
 		vm.typeProducts = TypeProductsFactory.get();
 	
-		//if phone
-		if (document.documentElement.clientWidth <= 480) {
+		init();
 	
+		function setHeightTypeProducts() {
+			//if phone
+			if (document.documentElement.clientWidth > 480) return;
+			// !!! Bad Code
 			$timeout(function () {
-				setHeightTypeProducts();
+	
+				var collection = document.querySelector('.collection.type-products'),
+				    heightWindow = document.documentElement.clientHeight,
+				    heightFooter = document.querySelector('.footer').offsetHeight,
+				    topCollection = collection.getBoundingClientRect().top,
+				    colletMargBot = parseInt(getComputedStyle(collection).marginBottom),
+				    heightCollection;
+	
+				//console.dir( heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
+				heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
+				collection.style.height = heightCollection + 'px';
+				console.log("Resize");
 			});
 		}
 	
-		function setHeightTypeProducts() {
+		function init() {
 	
-			var collection = document.querySelector('.collection.type-products'),
-			    heightWindow = document.documentElement.clientHeight,
-			    heightFooter = document.querySelector('.footer').offsetHeight,
-			    topCollection = collection.getBoundingClientRect().top,
-			    colletMargBot = parseInt(getComputedStyle(collection).marginBottom),
-			    heightCollection;
+			setHeightTypeProducts();
+			window.addEventListener("resize", setHeightTypeProducts);
+		}
 	
-			console.dir(heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
-			heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
-			collection.style.height = heightCollection + 'px';
+		function close() {
+	
+			window.removeEventListener("resize", setHeightTypeProducts);
 		}
 	
 		function editTypeProduct($event, typeProduct, $index) {
@@ -43822,6 +43832,13 @@
 		function selectCategory(category) {
 			console.log("Click on: " + category.name);
 		}
+	
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+	
+			if (toState.name !== "type-products") {
+				close();
+			}
+		});
 	
 		/*$scope.$on('newTypeProduct', function (event, data) {
 	 
@@ -43852,7 +43869,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"></div>";
+	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/type_products/typeProducts.html",v1)}]);
 	module.exports=v1;
 
