@@ -19,6 +19,9 @@ main .container {
   top: 0px;
   padding: 0 40px;
 }
+main > .container {
+  overflow: hidden;   /* For mobile css createTypeProducts*/
+}
 @media only screen and (max-width : 992px) {
   main .container {
     left: 0;
@@ -129,76 +132,7 @@ main .container {
 
 
 
-@keyframes widthResize {
-    /*0% { width: 0px; }
-    98% { width: 77%; }
-    100% { width: calc(100%-300px); }*/
-    from { right: 0; left: 100%; }
-    to { left: 0; }
-}
-.side-nav-right {         /*   Всплывающая форма для создание/редактирование таблицы товара   */
-  position: absolute;
-  top: 67px;
-  bottom: 0;
-  margin-left: 302px;
-  right: 0;
-  /*width: calc(100%-300px);*/
-  z-index: 900;
-  overflow-y: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #fff;
 
-  /*animation: widthResize .3s linear 1;*/
-  animation-name: widthResize;
-  animation-duration: .3s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes widthResizeClose {
-    /*0% { width: calc(100%-300px); }
-    2% { width: 77%; }
-    100% { width: 0; }*/
-    from { left: 0; }
-    to { left: 100%; }
-}
-.side-nav-right.close-side-nav-right {
-  animation-name: widthResizeClose;
-  animation-duration: .3s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@media only screen and (max-width : 992px) {
-      .side-nav-right {
-        margin-left: 0;
-      }
-    }
-@keyframes rotateButtonAdd {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(45deg); }
-}
-.side-nav-right > .fixed-action-btn {   /*  Кнопка закрыть для формы создание/редактирование таблицы товара  */
-  animation-name: rotateButtonAdd;
-  animation-duration: .3s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  padding: 0;
-}
-@keyframes rotateButtonAddClose {
-    from { transform: rotate(45deg); }
-    to { transform: rotate(0deg); }
-}
-.side-nav-right > .fixed-action-btn.close {
-  animation-name: rotateButtonAddClose;
-  animation-duration: .28s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
 
 
 
@@ -222,6 +156,11 @@ main .container {
 .fields input {
   margin-bottom: 3px !important;
   text-indent: 10px !important;
+}
+@media only screen and (max-width : 480px) {
+  .fields {
+    margin-left: 20px;
+  }
 }
 
 

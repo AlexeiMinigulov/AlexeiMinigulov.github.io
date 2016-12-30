@@ -42605,7 +42605,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".top-nav.fixed {\r\n  position: fixed;\r\n  height: 65px;\r\n  z-index: 2;\r\n}\r\n.top-nav.fixed .container {\r\n  display: inline-block;\r\n  position: absolute;\r\n  z-index: 1;\r\n  max-width: 70%;\r\n  margin: 0 auto;\r\n  left: 250px;\r\n  right: 0;\r\n  top: 0px;\r\n  padding: 0 40px;\r\n}\r\n.top-nav.fixed > .container > .nav-wrapper > * {\r\n    float: left;\r\n}\r\n.top-nav.fixed > .container > .nav-wrapper > *:first-child {\r\n  display: none;\r\n  margin-right: 40px;\r\n}\r\n@media only screen and (max-width : 992px) {\r\n  .top-nav.fixed .container {\r\n    left: 0;\r\n    max-width: 90%;\r\n    padding: 0 0px;\r\n  }\r\n  .top-nav.fixed > .container > .nav-wrapper > i {\r\n    display: inline-block !important;\r\n    margin-top: 12px;\r\n    height: 40px !important;\r\n    width: 40px;\r\n    font-size: 25px;\r\n    line-height: 40px !important;\r\n    border-radius: 100%;\r\n    text-align: center;\r\n  }\r\n}\r\n@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {\r\n   /* стили только для IE10 */\r\n  .top-nav.fixed > .container > .nav-wrapper .fa.fa-bars {\r\n    position: static;\r\n  }\r\n  .top-nav.fixed > .container > .nav-wrapper .fa.fa-bars::after {\r\n    content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojRkZGRkZGOyBzdHJva2U6I0ZGRkZGRn08L3N0eWxlPjxnPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMTkwLjlIMTMxYy0xMSwwLTIwLTktMjAtMjBzOS0yMCwyMC0yMGgyNTBjMTEsMCwyMCw5LDIwLDIwUzM5MiwxOTAuOSwzODEsMTkwLjl6Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMzYxLjFIMTMxYy0xMSwwLTIwLTktMjAtMjBzOS0yMCwyMC0yMGgyNTBjMTEsMCwyMCw5LDIwLDIwUzM5MiwzNjEuMSwzODEsMzYxLjF6Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMjc2SDEzMWMtMTEsMC0yMC05LTIwLTIwczktMjAsMjAtMjBoMjUwYzExLDAsMjAsOSwyMCwyMFMzOTIsMjc2LDM4MSwyNzZ6Ii8+PC9nPjwvZz48L3N2Zz4=);\r\n    display: block;\r\n    position: absolute;\r\n    font-family: sans-serif;\r\n    font-size: 25px;\r\n    top: 15px;\r\n    left: 8px;\r\n    width: 40px;\r\n    height: 40px;\r\n    color: #fff;\r\n  }\r\n}", ""]);
+	exports.push([module.id, ".top-nav.fixed {\r\n  position: fixed;\r\n  height: 65px;\r\n  z-index: 2;\r\n}\r\n.top-nav.fixed > .container {\r\n  display: inline-block;\r\n  position: absolute;\r\n  z-index: 1;\r\n  max-width: 70%;\r\n  margin: 0 auto;\r\n  left: 250px;\r\n  right: 0;\r\n  top: 0px;\r\n  padding: 0 40px;\r\n}\r\n.top-nav.fixed > .container > .nav-wrapper > * {\r\n    float: left;\r\n}\r\n.top-nav.fixed > .container > .nav-wrapper > *:first-child {\r\n  display: none;\r\n  margin-right: 40px;\r\n}\r\n@media only screen and (max-width : 992px) {\r\n  .top-nav.fixed > .container {\r\n    left: 0;\r\n    max-width: 90%;\r\n    padding: 0 0px;\r\n  }\r\n  .top-nav.fixed > .container > .nav-wrapper > i {\r\n    display: inline-block !important;\r\n    margin-top: 12px;\r\n    height: 40px !important;\r\n    width: 40px;\r\n    font-size: 25px;\r\n    line-height: 40px !important;\r\n    border-radius: 100%;\r\n    text-align: center;\r\n  }\r\n}\r\n@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {\r\n   /* стили только для IE10 */\r\n  .top-nav.fixed > .container > .nav-wrapper .fa.fa-bars {\r\n    position: static;\r\n  }\r\n  .top-nav.fixed > .container > .nav-wrapper .fa.fa-bars::after {\r\n    content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojRkZGRkZGOyBzdHJva2U6I0ZGRkZGRn08L3N0eWxlPjxnPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMTkwLjlIMTMxYy0xMSwwLTIwLTktMjAtMjBzOS0yMCwyMC0yMGgyNTBjMTEsMCwyMCw5LDIwLDIwUzM5MiwxOTAuOSwzODEsMTkwLjl6Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMzYxLjFIMTMxYy0xMSwwLTIwLTktMjAtMjBzOS0yMCwyMC0yMGgyNTBjMTEsMCwyMCw5LDIwLDIwUzM5MiwzNjEuMSwzODEsMzYxLjF6Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zODEsMjc2SDEzMWMtMTEsMC0yMC05LTIwLTIwczktMjAsMjAtMjBoMjUwYzExLDAsMjAsOSwyMCwyMFMzOTIsMjc2LDM4MSwyNzZ6Ii8+PC9nPjwvZz48L3N2Zz4=);\r\n    display: block;\r\n    position: absolute;\r\n    font-family: sans-serif;\r\n    font-size: 25px;\r\n    top: 15px;\r\n    left: 8px;\r\n    width: 40px;\r\n    height: 40px;\r\n    color: #fff;\r\n  }\r\n}", ""]);
 	
 	// exports
 
@@ -43350,7 +43350,7 @@
 
 	"use strict";
 	
-	module.exports = function (app) {
+	module.exports = function createCategory(app) {
 	
 	    __webpack_require__(82);
 	
@@ -43426,7 +43426,7 @@
 		loadModal();
 	
 		document.querySelector('.paranga').onclick = function (e) {
-			closeModal();
+			closeModal('categories');
 		};
 	
 		/*window.addEventListener("orientationchange", function() {
@@ -43479,7 +43479,7 @@
 		/*
 	  *@close modal window "Create Category"
 	  */
-		function closeModal() {
+		function closeModal(state) {
 	
 			$('#modal-new-category').closeModal();
 			$('#slide-out').css('z-index', '');
@@ -43492,14 +43492,14 @@
 			window.removeEventListener("resize", resizeCreateCategory);
 	
 			$timeout(function () {
-				$state.go('categories');
+				$state.go(state);
 			}, 200);
 		}
 	
 		function closeModalCategory($event) {
 	
 			if ($event) $event.preventDefault();
-			closeModal();
+			closeModal("categories");
 		}
 	
 		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
@@ -43507,8 +43507,11 @@
 			if (toState.name === "categories.create") {
 				loadModal();
 			} else {
-				closeModal();
+				closeModal(toState.name);
 			}
+		});
+		$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {
+			//console.dir("success: "+toState.name);
 		});
 	};
 
@@ -43589,15 +43592,16 @@
 	module.exports = function (app) {
 	
 	    __webpack_require__(89);
-	    app.factory('TypeProductsFactory', __webpack_require__(91));
+	    __webpack_require__(91)(app);
+	    app.factory('TypeProductsFactory', __webpack_require__(96));
 	
-	    app.controller('typeProductsCtrl', __webpack_require__(92));
+	    app.controller('typeProductsCtrl', __webpack_require__(97));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('type-products', {
 	            url: '/type-products',
-	            template: __webpack_require__(93),
+	            template: __webpack_require__(98),
 	            data: {
 	                label: "Виды товаров",
 	                parent: "dashboard"
@@ -43642,13 +43646,177 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\r\n\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".header {\r\n\t\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
 /* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = function createTypeProduct(app) {
+	
+	    __webpack_require__(92);
+	
+	    app.controller('createTypeProductCtrl', __webpack_require__(94));
+	
+	    app.config(function ($stateProvider) {
+	
+	        $stateProvider.state('type-products.create', {
+	            url: '/create',
+	            template: __webpack_require__(95),
+	            controller: 'createTypeProductCtrl as vm'
+	        });
+	    });
+	};
+
+/***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(93);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 93 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".side-nav-right > .container {\r\n\tleft: 0;\r\n\tmargin: 0;\r\n  width: 96%;\r\n  max-width: 96%;\r\n}\r\n/*.side-nav-right > .container h4 {\r\n\tmargin-left: 95px;\r\n}*/\r\n.side-nav-right .new-field label.browser-default {\r\n\tdisplay: none;\r\n}\r\n\r\n\r\n@keyframes widthResize {\r\n    from { left: 100%; right: -100%; }\r\n    to { left: 0; right: 0; }\r\n}\r\n.side-nav-right {         /*   Всплывающая форма для создание/редактирование таблицы товара   */\r\n  position: absolute;\r\n  top: 55px;\r\n  bottom: 0;\r\n  right: 0;\r\n  margin-left: 0;\r\n  z-index: 900;\r\n  overflow-y: auto;\r\n  padding-bottom: 15px;\r\n  background-color: #fff;\r\n\r\n  /*animation: widthResize .3s linear 1;*/\r\n  animation-name: widthResize;\r\n  animation-duration: .3s;\r\n  animation-timing-function: linear;\r\n  animation-iteration-count: 1;\r\n  animation-fill-mode: forwards;\r\n}\r\n@keyframes widthResizeClose {\r\n    from { left: 0; right: 0; }\r\n    to { left: 100%; right: -100%; }\r\n}\r\n.side-nav-right.close-side-nav-right {\r\n  animation-name: widthResizeClose;\r\n  animation-duration: .3s;\r\n  animation-timing-function: linear;\r\n  animation-iteration-count: 1;\r\n  animation-fill-mode: forwards;\r\n}\r\n@media only screen and (max-width : 992px) {\r\n      .side-nav-right {\r\n        margin-left: 0;\r\n      }\r\n    }\r\n@keyframes rotateButtonAdd {\r\n    from { transform: rotate(0deg); }\r\n    to { transform: rotate(45deg); }\r\n}\r\n.side-nav-right > .fixed-action-btn {   /*  Кнопка закрыть для формы создание/редактирование таблицы товара  */\r\n  animation-name: rotateButtonAdd;\r\n  animation-duration: .3s;\r\n  animation-timing-function: linear;\r\n  animation-iteration-count: 1;\r\n  animation-fill-mode: forwards;\r\n\r\n  padding: 0;\r\n}\r\n@keyframes rotateButtonAddClose {\r\n    from { transform: rotate(45deg); }\r\n    to { transform: rotate(0deg); }\r\n}\r\n.side-nav-right > .fixed-action-btn.close {\r\n  animation-name: rotateButtonAddClose;\r\n  animation-duration: .28s;\r\n  animation-timing-function: linear;\r\n  animation-iteration-count: 1;\r\n  animation-fill-mode: forwards;\r\n}\r\n\r\n\r\n.header.type-product {\r\n\t\r\n}\r\n.header.type-product > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n  position: relative;\r\n  top: -13px;\r\n  left: 13px;\r\n}\r\n.header.type-product > .fixed-action-btn {\r\n\t\r\n}\r\n@media only screen and (max-width : 480px) {\r\n\t.header.type-product {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header.type-product:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header.type-product > h1 {\r\n\t\tdisplay: inline-block;\r\n    position: static;\r\n\t\tmargin: 0;\r\n    margin-left: 10px;\r\n\t\tfont-size: 25px;\r\n\t}\r\n\t.header.type-product > .fixed-action-btn {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header.type-product > .fixed-action-btn a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header.type-product > .fixed-action-btn a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 94 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function createCtrl($scope, $timeout, $state) {
+	
+		var vm = this;
+	
+		vm.newTypeProduct = {};
+		vm.newTypeProduct.fields = [];
+		vm.field = {};
+	
+		vm.units = []; //  Ед. измерение для числовых значений
+	
+		vm.listsValue = []; //  Список подгатовленых значений для выборки
+	
+		vm.closeSideNavRight = closeSideNavRight;
+	
+		vm.createField = createField;
+	
+		vm.removeField = removeField;
+	
+		vm.submitNewTypeProduct = submitNewTypeProduct;
+	
+		/*msCreateTypeProductsFactory.getUnits()
+	 	.then(function successCallback(response) {
+	 
+	 			vm.units = response.data.units;
+	 			vm.listsValue = response.data.listsValue;
+	 
+	 		}, function errorCallback(response) {
+	 
+	 	});*/
+	
+		function submitNewTypeProduct($event) {
+	
+			$event.preventDefault();
+	
+			/*msCreateTypeProductsFactory.submitNewTypeProduct( vm.newTypeProduct )
+	  	.then(function successCallback(response) {
+	  					if(response.data.status === true) {
+	  						closeSideNavRight(null);
+	  				$scope.$emit('newTypeProduct', vm.newTypeProduct);
+	  			}
+	  				}, function errorCallback(response) {
+	  			});*/
+		}
+	
+		function removeField($event, $index) {
+	
+			$event.stopPropagation();
+			$event.preventDefault();
+	
+			vm.newTypeProduct.fields.splice($index, 1);
+		}
+	
+		function closeSideNavRight($event) {
+	
+			if ($event) $event.preventDefault();
+	
+			document.querySelector('.side-nav-right').classList.add('close-side-nav-right');
+			document.querySelector('.side-nav-right .header > .fixed-action-btn').classList.add('close');
+	
+			$timeout(function () {
+				$state.go('type-products');
+			}, 300);
+		}
+	
+		function createField() {
+	
+			if (!vm.field.name || !vm.field.type) return;
+	
+			if (vm.field.type === 'integer' && (!vm.field.unit || !vm.field.min || !vm.field.max)) return;
+	
+			if (vm.field.type === 'list' && !vm.field.listValue) return;
+	
+			vm.newTypeProduct.fields.push(vm.field);
+	
+			vm.field = {};
+		}
+	
+		$(document).ready(function () {
+	
+			$('select').material_select();
+	
+			$('.collapsible').collapsible({ accordion: false });
+		});
+	};
+
+/***/ },
+/* 95 */
+/***/ function(module, exports) {
+
+	var angular=window.angular,ngModule;
+	try {ngModule=angular.module(["ng"])}
+	catch(e){ngModule=angular.module("ng",[])}
+	var v1="<div class=\"side-nav-right\">\r\n\t<div class=\"container\">\r\n\t\t\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"header type-product\">\r\n\t\t\t\t<h1>Создать таблицу</h1>\r\n\t\t\t\t<div class=\"fixed-action-btn\">\r\n\t\t\t\t\t<a ui-sref=\"#\"\r\n\t\t\t\t\tng-click=\"vm.closeSideNavRight($event)\"\r\n\t\t\t\t\tclass=\"btn-floating btn-large waves-effect waves-light red\">\r\n\t\t\t\t\t\t<i class=\"material-icons\">add</i>\r\n\t\t\t\t\t</a>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<form class=\"col s12 m12\">\r\n\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t<input id=\"name\" type=\"text\" class=\"validate\"\r\n\t\t\t\t\t\tng-model=\"vm.newTypeProduct.name\">\r\n\t\t\t\t\t\t<label for=\"name\">Название таблицы</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t<input id=\"semanticUrl\" type=\"text\" class=\"validate\"\r\n\t\t\t\t\t\tng-model=\"vm.newTypeProduct.semanticUrl\">\r\n\t\t\t\t\t\t<label for=\"semanticUrl\">ЧПУ URL</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"fields\">\r\n\t\t\t\t\t\t<p class=\"block\">Поля:</p>\r\n\t\t\t\t\t\t<div class=\"col s12 m8\">\r\n\t\t\t\t\t\t\t<ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-header\">Название</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-body\"><p>Задано по умолчанию.</p></div>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-header\">Описание</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-body\"><p>Задано по умолчанию.</p></div>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-header\">Цена</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-body\"><p>Задано по умолчанию.</p></div>\r\n\t\t\t\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t\t\t\t<li ng-repeat=\"field in vm.newTypeProduct.fields track by $index\"\r\n\t\t\t\t\t\t\t\tclass=\"created-field\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-header\">\r\n\t\t\t\t\t\t\t\t\t\t{{field.name}}<a ng-click=\"vm.removeField($event, $index)\"\r\n\t\t\t\t\t\t\t\t\t\t\tclass=\"waves-effect waves-light btn\">Удалить</a>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"collapsible-body\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tng-model=\"field.name\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"active\">Название поля:</label>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Тип поля:</label>\r\n\t\t\t\t\t\t\t\t\t\t\t<select ng-model=\"field.type.name\" class=\"browser-default  select-type\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете тип поля</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"string\">Строка</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"integer\">Число</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"list\">Список</option>\r\n\t\t\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"type-integer\" ng-show=\"field.type.name==='integer'\">\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12 block\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Единицы измерения:</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<select ng-model=\"field.type.unit\" class=\"browser-default\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете ед. измерения</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<option ng-repeat=\"unit in vm.units track by $index\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"{{unit.id}}\">{{unit.name}}</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tng-model=\"field.type.min\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"active\">Минимум</label>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"number\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\t\t\t\tng-model=\"field.type.max\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"active\">Максимум</label>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"type-list\" ng-show=\"field.type.name==='list'\">\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Список:</label>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<select ng-model=\"field.type.listValue\" class=\"browser-default\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете список</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<option ng-repeat=\"list in vm.listsValue track by $index\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\tvalue=\"{{list.id}}\">{{list.name}}</option>\r\n\t\t\t\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"new-field  z-depth-5\"\">\r\n\t\t\t\t\t\t\t\t<p>Создать новое поле</p>\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t<input id=\"name-field\" type=\"text\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\tng-model=\"vm.field.name\">\r\n\t\t\t\t\t\t\t\t\t<label for=\"name\">Название поля</label>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Тип поля:</label>\r\n\t\t\t\t\t\t\t\t\t<select ng-model=\"vm.field.type.name\" class=\"browser-default  select-type\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете тип поля</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"string\">Строка</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"integer\">Число</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"list\">Список</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"type-integer\" ng-show=\"vm.field.type.name==='integer'\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Единицы измерения:</label>\r\n\t\t\t\t\t\t\t\t\t\t<select ng-model=\"vm.field.type.unit\" class=\"browser-default\">\r\n\t\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете ед. измерения</option>\r\n\t\t\t\t\t\t\t\t\t\t\t<option ng-repeat=\"unit in vm.units track by $index\"\r\n\t\t\t\t\t\t\t\t\t\t\tvalue=\"{{unit.id}}\">{{unit.name}}</option>\r\n\t\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t\t\t\t\t<input id=\"min\" type=\"number\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\t\tng-model=\"vm.field.type.min\">\r\n\t\t\t\t\t\t\t\t\t\t<label for=\"min\">Минимум</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t<div class=\"input-field col s10 m6  block\">\r\n\t\t\t\t\t\t\t\t\t\t<input id=\"max\" type=\"number\" class=\"validate\"\r\n\t\t\t\t\t\t\t\t\t\tng-model=\"vm.field.type.max\">\r\n\t\t\t\t\t\t\t\t\t\t<label for=\"max\">Максимум</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"type-list\" ng-show=\"vm.field.type.name==='list'\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"input-field col s12 m12  block\">\r\n\t\t\t\t\t\t\t\t\t\t<label class=\"browser-default\">Список:</label>\r\n\t\t\t\t\t\t\t\t\t\t<select ng-model=\"vm.field.type.listValue\" class=\"browser-default\">\r\n\t\t\t\t\t\t\t\t\t\t\t<option value=\"\" selected>Выбирете список</option>\r\n\t\t\t\t\t\t\t\t\t\t\t<option ng-repeat=\"list in vm.listsValue track by $index\"\r\n\t\t\t\t\t\t\t\t\t\t\tvalue=\"{{list.id}}\">{{list.name}}</option>\r\n\t\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<a ng-click=\"vm.createField($event)\"\r\n\t\t\t\t\t\t\t\tclass=\"waves-effect waves-light btn\">Создать поле</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<a ng-click=\"vm.submitNewTypeProduct($event)\"\r\n\t\t\t\t\t\t\t\tclass=\"waves-effect waves-light btn\">Создать новую таблицу</a>\r\n\t\t\t</form>\r\n\t\t</div>\r\n\r\n\t</div>\r\n</div>";
+	ngModule.run(["$templateCache",function(c){c.put("type_products/createTypeProduct/createTypeProduct.html",v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 96 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43768,7 +43936,7 @@
 	};
 
 /***/ },
-/* 92 */
+/* 97 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43878,7 +44046,7 @@
 	};
 
 /***/ },
-/* 93 */
+/* 98 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
