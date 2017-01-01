@@ -67,7 +67,7 @@
 	    router = __webpack_require__(40),
 	    ngAnimate = __webpack_require__(41);
 	
-	var app = angular.module("myApp", [router, ngAnimate]);
+	var app = angular.module("myApp", [router, ngAnimate, 'ngMockE2E']);
 	
 	app.config(function ($urlRouterProvider) {
 	    $urlRouterProvider.otherwise("/dashboard");
@@ -89,19 +89,19 @@
 	__webpack_require__(73)(app);
 	__webpack_require__(78)(app);
 	__webpack_require__(88)(app);
+	__webpack_require__(99)(app);
 	
-	/*app.run(function($rootScope, Auth, $state){
-	    $rootScope.$on('$stateChangeStart',
-	        function(event, toState, toParams, fromState, fromParams, options){
-	            if(toState.name == 'login' && Auth.user()){
-	                event.preventDefault();
-	            }
-	            if(toState.data && toState.data.login && !Auth.user()){
-	                event.preventDefault();
-	                $state.go('denied');
-	            }
-	        })
-	});*/
+	app.run(function ($http, $httpBackend) {
+	
+	    var televizory = '{"typeProduct":{"_id":"580cee19c4ca6f140f000029","name":"TV","semanticUrl":"televizory","fields":[{"name":"Memory","type":{"name":"string"}},{"name":"Size Scrine","type":{"name":"string"}}],"updated_at":"2016-10-23 17:06:33","created_at":"2016-10-23 17:06:33"},"products":[{"id":1,"name":"iPhone","manufacturer_id":1,"description":"dsadas","price":15000,"type_product_id":"580cee19c4ca6f140f000029","created_at":null,"updated_at":null,"fields":["4 Gb","800x400"]},{"id":5,"name":"iPhone22","manufacturer_id":0,"description":"dgdg425wffsfs","price":22000,"type_product_id":"580cee19c4ca6f140f000029","created_at":"2016-10-23 19:28:12","updated_at":"2016-10-23 19:28:12","fields":["420","521x400"]},{"id":7,"name":"iPhone3","manufacturer_id":0,"description":"НазваниеНазваниеНазваниеНазвание","price":12000,"type_product_id":"580cee19c4ca6f140f000029","created_at":"2016-12-03 20:03:03","updated_at":"2016-12-03 20:03:03","fields":["20Gb","800x1800"]}],"values":[{"id":1,"list_value_id":1,"name":"128 GB","created_at":null,"updated_at":null},{"id":2,"list_value_id":1,"name":"256 GB","created_at":null,"updated_at":null}],"units":[{"id":1,"name":"Mb","created_at":null,"updated_at":null},{"id":2,"name":"px","created_at":null,"updated_at":null},{"id":3,"name":"zoom","created_at":null,"updated_at":null}]}';
+	    var fotokameri = '{"typeProduct":{"_id":"58442ccac4ca6f7014000029","name":"Фотокамера","semanticUrl":"fotokameri","fields":[{"name":"Size1","type":{"name":"string"}},{"name":"Size2","type":{"name":"string"}},{"name":"Size3","type":{"name":"string"}},{"name":"Size4","type":{"name":"string"}},{"name":"Size5","type":{"name":"string"}},{"name":"Size6","type":{"name":"string"}}],"updated_at":"2016-12-04 14:48:42","created_at":"2016-12-04 14:48:42"},"products":[],"values":[{"id":1,"list_value_id":1,"name":"128 GB","created_at":null,"updated_at":null},{"id":2,"list_value_id":1,"name":"256 GB","created_at":null,"updated_at":null}],"units":[{"id":1,"name":"Mb","created_at":null,"updated_at":null},{"id":2,"name":"px","created_at":null,"updated_at":null},{"id":3,"name":"zoom","created_at":null,"updated_at":null}]}';
+	    $httpBackend.whenGET('admin/type-products/televizory').respond(function () {
+	        return [200, televizory];
+	    });
+	    $httpBackend.whenGET('admin/type-products/fotokameri').respond(function () {
+	        return [200, fotokameri];
+	    });
+	});
 
 /***/ },
 /* 2 */
@@ -689,7 +689,7 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.1
+	 * @license AngularJS v1.6.0
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
@@ -747,7 +747,7 @@
 	      return match;
 	    });
 	
-	    message += '\nhttp://errors.angularjs.org/1.6.1/' +
+	    message += '\nhttp://errors.angularjs.org/1.6.0/' +
 	      (module ? module + '/' : '') + code;
 	
 	    for (i = SKIP_INDEXES, paramPrefix = '?'; i < templateArgs.length; i++, paramPrefix = '&') {
@@ -3313,11 +3313,11 @@
 	var version = {
 	  // These placeholder strings will be replaced by grunt's `build` task.
 	  // They need to be double- or single-quoted.
-	  full: '1.6.1',
+	  full: '1.6.0',
 	  major: 1,
 	  minor: 6,
-	  dot: 1,
-	  codeName: 'promise-rectification'
+	  dot: 0,
+	  codeName: 'rainbow-tsunami'
 	};
 	
 	
@@ -4443,15 +4443,12 @@
 	
 	  after: function(element, newElement) {
 	    var index = element, parent = element.parentNode;
+	    newElement = new JQLite(newElement);
 	
-	    if (parent) {
-	      newElement = new JQLite(newElement);
-	
-	      for (var i = 0, ii = newElement.length; i < ii; i++) {
-	        var node = newElement[i];
-	        parent.insertBefore(node, index.nextSibling);
-	        index = node;
-	      }
+	    for (var i = 0, ii = newElement.length; i < ii; i++) {
+	      var node = newElement[i];
+	      parent.insertBefore(node, index.nextSibling);
+	      index = node;
 	    }
 	  },
 	
@@ -13586,8 +13583,7 @@
 	      * appropriate moment.  See the example below for more details on how and when to do this.
 	      * </div>
 	      *
-	      * @param {function()} fn A function that should be called repeatedly. If no additional arguments
-	      *   are passed (see below), the function is called with the current iteration count.
+	      * @param {function()} fn A function that should be called repeatedly.
 	      * @param {number} delay Number of milliseconds between each function call.
 	      * @param {number=} [count=0] Number of times to repeat. If not set, or 0, will repeat
 	      *   indefinitely.
@@ -17218,7 +17214,6 @@
 	   *
 	   * @description
 	   * Retrieves or overrides whether to generate an error when a rejected promise is not handled.
-	   * This feature is enabled by default.
 	   *
 	   * @param {boolean=} value Whether to generate an error when a rejected promise is not handled.
 	   * @returns {boolean|ng.$qProvider} Current value when called without a new value or self for
@@ -17360,11 +17355,7 @@
 	      if (!toCheck.pur) {
 	        toCheck.pur = true;
 	        var errorMessage = 'Possibly unhandled rejection: ' + toDebugString(toCheck.value);
-	        if (toCheck.value instanceof Error) {
-	          exceptionHandler(toCheck.value, errorMessage);
-	        } else {
-	          exceptionHandler(errorMessage);
-	        }
+	        exceptionHandler(errorMessage);
 	      }
 	    }
 	  }
@@ -18098,21 +18089,15 @@
 	
 	        if (!array) {
 	          array = scope.$$watchers = [];
-	          array.$$digestWatchIndex = -1;
 	        }
 	        // we use unshift since we use a while loop in $digest for speed.
 	        // the while loop reads in reverse order.
 	        array.unshift(watcher);
-	        array.$$digestWatchIndex++;
 	        incrementWatchersCount(this, 1);
 	
 	        return function deregisterWatch() {
-	          var index = arrayRemove(array, watcher);
-	          if (index >= 0) {
+	          if (arrayRemove(array, watcher) >= 0) {
 	            incrementWatchersCount(scope, -1);
-	            if (index < array.$$digestWatchIndex) {
-	              array.$$digestWatchIndex--;
-	            }
 	          }
 	          lastDirtyWatch = null;
 	        };
@@ -18445,6 +18430,7 @@
 	      $digest: function() {
 	        var watch, value, last, fn, get,
 	            watchers,
+	            length,
 	            dirty, ttl = TTL,
 	            next, current, target = this,
 	            watchLog = [],
@@ -18485,10 +18471,10 @@
 	          do { // "traverse the scopes" loop
 	            if ((watchers = current.$$watchers)) {
 	              // process our watches
-	              watchers.$$digestWatchIndex = watchers.length;
-	              while (watchers.$$digestWatchIndex--) {
+	              length = watchers.length;
+	              while (length--) {
 	                try {
-	                  watch = watchers[watchers.$$digestWatchIndex];
+	                  watch = watchers[length];
 	                  // Most common watches are on primitives, in which case we can short
 	                  // circuit it with === operator, only when === fails do we use .equals
 	                  if (watch) {
@@ -20805,14 +20791,6 @@
 	  var lastCookies = {};
 	  var lastCookieString = '';
 	
-	  function safeGetCookie(rawDocument) {
-	    try {
-	      return rawDocument.cookie || '';
-	    } catch (e) {
-	      return '';
-	    }
-	  }
-	
 	  function safeDecodeURIComponent(str) {
 	    try {
 	      return decodeURIComponent(str);
@@ -20823,7 +20801,7 @@
 	
 	  return function() {
 	    var cookieArray, cookie, i, index, name;
-	    var currentCookieString = safeGetCookie(rawDocument);
+	    var currentCookieString = rawDocument.cookie || '';
 	
 	    if (currentCookieString !== lastCookieString) {
 	      lastCookieString = currentCookieString;
@@ -26411,71 +26389,51 @@
 	
 	function classDirective(name, selector) {
 	  name = 'ngClass' + name;
-	  var indexWatchExpression;
-	
-	  return ['$parse', function($parse) {
+	  return ['$animate', function($animate) {
 	    return {
 	      restrict: 'AC',
 	      link: function(scope, element, attr) {
-	        var expression = attr[name].trim();
-	        var isOneTime = (expression.charAt(0) === ':') && (expression.charAt(1) === ':');
+	        var oldVal;
 	
-	        var watchInterceptor = isOneTime ? toFlatValue : toClassString;
-	        var watchExpression = $parse(expression, watchInterceptor);
-	        var watchAction = isOneTime ? ngClassOneTimeWatchAction : ngClassWatchAction;
+	        scope.$watch(attr[name], ngClassWatchAction, true);
 	
-	        var classCounts = element.data('$classCounts');
-	        var oldModulo = true;
-	        var oldClassString;
+	        attr.$observe('class', function(value) {
+	          ngClassWatchAction(scope.$eval(attr[name]));
+	        });
 	
-	        if (!classCounts) {
-	          // Use createMap() to prevent class assumptions involving property
-	          // names in Object.prototype
-	          classCounts = createMap();
-	          element.data('$classCounts', classCounts);
-	        }
 	
 	        if (name !== 'ngClass') {
-	          if (!indexWatchExpression) {
-	            indexWatchExpression = $parse('$index', function moduloTwo($index) {
-	              // eslint-disable-next-line no-bitwise
-	              return $index & 1;
-	            });
-	          }
-	
-	          scope.$watch(indexWatchExpression, ngClassIndexWatchAction);
+	          scope.$watch('$index', function($index, old$index) {
+	            /* eslint-disable no-bitwise */
+	            var mod = $index & 1;
+	            if (mod !== (old$index & 1)) {
+	              var classes = arrayClasses(scope.$eval(attr[name]));
+	              if (mod === selector) {
+	                addClasses(classes);
+	              } else {
+	                removeClasses(classes);
+	              }
+	            }
+	            /* eslint-enable */
+	          });
 	        }
 	
-	        scope.$watch(watchExpression, watchAction, isOneTime);
-	
-	        function addClasses(classString) {
-	          classString = digestClassCounts(split(classString), 1);
-	          attr.$addClass(classString);
+	        function addClasses(classes) {
+	          var newClasses = digestClassCounts(classes, 1);
+	          attr.$addClass(newClasses);
 	        }
 	
-	        function removeClasses(classString) {
-	          classString = digestClassCounts(split(classString), -1);
-	          attr.$removeClass(classString);
+	        function removeClasses(classes) {
+	          var newClasses = digestClassCounts(classes, -1);
+	          attr.$removeClass(newClasses);
 	        }
 	
-	        function updateClasses(oldClassString, newClassString) {
-	          var oldClassArray = split(oldClassString);
-	          var newClassArray = split(newClassString);
-	
-	          var toRemoveArray = arrayDifference(oldClassArray, newClassArray);
-	          var toAddArray = arrayDifference(newClassArray, oldClassArray);
-	
-	          var toRemoveString = digestClassCounts(toRemoveArray, -1);
-	          var toAddString = digestClassCounts(toAddArray, 1);
-	
-	          attr.$addClass(toAddString);
-	          attr.$removeClass(toRemoveString);
-	        }
-	
-	        function digestClassCounts(classArray, count) {
+	        function digestClassCounts(classes, count) {
+	          // Use createMap() to prevent class assumptions involving property
+	          // names in Object.prototype
+	          var classCounts = element.data('$classCounts') || createMap();
 	          var classesToUpdate = [];
-	
-	          forEach(classArray, function(className) {
+	          forEach(classes, function(className) {
 	            if (count > 0 || classCounts[className]) {
 	              classCounts[className] = (classCounts[className] || 0) + count;
 	              if (classCounts[className] === +(count > 0)) {
@@ -26483,106 +26441,77 @@
 	              }
 	            }
 	          });
-	
+	          element.data('$classCounts', classCounts);
 	          return classesToUpdate.join(' ');
 	        }
 	
-	        function ngClassIndexWatchAction(newModulo) {
-	          // This watch-action should run before the `ngClass[OneTime]WatchAction()`, thus it
-	          // adds/removes `oldClassString`. If the `ngClass` expression has changed as well, the
-	          // `ngClass[OneTime]WatchAction()` will update the classes.
-	          if (newModulo === selector) {
-	            addClasses(oldClassString);
+	        function updateClasses(oldClasses, newClasses) {
+	          var toAdd = arrayDifference(newClasses, oldClasses);
+	          var toRemove = arrayDifference(oldClasses, newClasses);
+	          toAdd = digestClassCounts(toAdd, 1);
+	          toRemove = digestClassCounts(toRemove, -1);
+	          if (toAdd && toAdd.length) {
+	            $animate.addClass(element, toAdd);
+	          }
+	          if (toRemove && toRemove.length) {
+	            $animate.removeClass(element, toRemove);
+	          }
+	        }
+	
+	        function ngClassWatchAction(newVal) {
+	          // eslint-disable-next-line no-bitwise
+	          if (selector === true || (scope.$index & 1) === selector) {
+	            var newClasses = arrayClasses(newVal || []);
+	            if (!oldVal) {
+	              addClasses(newClasses);
+	            } else if (!equals(newVal,oldVal)) {
+	              var oldClasses = arrayClasses(oldVal);
+	              updateClasses(oldClasses, newClasses);
+	            }
+	          }
+	          if (isArray(newVal)) {
+	            oldVal = newVal.map(function(v) { return shallowCopy(v); });
 	          } else {
-	            removeClasses(oldClassString);
+	            oldVal = shallowCopy(newVal);
 	          }
-	
-	          oldModulo = newModulo;
-	        }
-	
-	        function ngClassOneTimeWatchAction(newClassValue) {
-	          var newClassString = toClassString(newClassValue);
-	
-	          if (newClassString !== oldClassString) {
-	            ngClassWatchAction(newClassString);
-	          }
-	        }
-	
-	        function ngClassWatchAction(newClassString) {
-	          if (oldModulo === selector) {
-	            updateClasses(oldClassString, newClassString);
-	          }
-	
-	          oldClassString = newClassString;
 	        }
 	      }
 	    };
-	  }];
 	
-	  // Helpers
-	  function arrayDifference(tokens1, tokens2) {
-	    if (!tokens1 || !tokens1.length) return [];
-	    if (!tokens2 || !tokens2.length) return tokens1;
+	    function arrayDifference(tokens1, tokens2) {
+	      var values = [];
 	
-	    var values = [];
-	
-	    outer:
-	    for (var i = 0; i < tokens1.length; i++) {
-	      var token = tokens1[i];
-	      for (var j = 0; j < tokens2.length; j++) {
-	        if (token === tokens2[j]) continue outer;
-	      }
-	      values.push(token);
-	    }
-	
-	    return values;
-	  }
-	
-	  function split(classString) {
-	    return classString && classString.split(' ');
-	  }
-	
-	  function toClassString(classValue) {
-	    var classString = classValue;
-	
-	    if (isArray(classValue)) {
-	      classString = classValue.map(toClassString).join(' ');
-	    } else if (isObject(classValue)) {
-	      classString = Object.keys(classValue).
-	        filter(function(key) { return classValue[key]; }).
-	        join(' ');
-	    }
-	
-	    return classString;
-	  }
-	
-	  function toFlatValue(classValue) {
-	    var flatValue = classValue;
-	
-	    if (isArray(classValue)) {
-	      flatValue = classValue.map(toFlatValue);
-	    } else if (isObject(classValue)) {
-	      var hasUndefined = false;
-	
-	      flatValue = Object.keys(classValue).filter(function(key) {
-	        var value = classValue[key];
-	
-	        if (!hasUndefined && isUndefined(value)) {
-	          hasUndefined = true;
+	      outer:
+	      for (var i = 0; i < tokens1.length; i++) {
+	        var token = tokens1[i];
+	        for (var j = 0; j < tokens2.length; j++) {
+	          if (token === tokens2[j]) continue outer;
 	        }
-	
-	        return value;
-	      });
-	
-	      if (hasUndefined) {
-	        // Prevent the `oneTimeLiteralWatchInterceptor` from unregistering
-	        // the watcher, by including at least one `undefined` value.
-	        flatValue.push(undefined);
+	        values.push(token);
 	      }
+	      return values;
 	    }
 	
-	    return flatValue;
-	  }
+	    function arrayClasses(classVal) {
+	      var classes = [];
+	      if (isArray(classVal)) {
+	        forEach(classVal, function(v) {
+	          classes = classes.concat(arrayClasses(v));
+	        });
+	        return classes;
+	      } else if (isString(classVal)) {
+	        return classVal.split(' ');
+	      } else if (isObject(classVal)) {
+	        forEach(classVal, function(v, k) {
+	          if (v) {
+	            classes = classes.concat(k.split(' '));
+	          }
+	        });
+	        return classes;
+	      }
+	      return classVal;
+	    }
+	  }];
 	}
 	
 	/**
@@ -29972,27 +29901,19 @@
 	 *
 	 */
 	var ngModelOptionsDirective = function() {
-	  NgModelOptionsController.$inject = ['$attrs', '$scope'];
-	  function NgModelOptionsController($attrs, $scope) {
-	    this.$$attrs = $attrs;
-	    this.$$scope = $scope;
-	  }
-	  NgModelOptionsController.prototype = {
-	    $onInit: function() {
-	      var parentOptions = this.parentCtrl ? this.parentCtrl.$options : defaultModelOptions;
-	      var modelOptionsDefinition = this.$$scope.$eval(this.$$attrs.ngModelOptions);
-	
-	      this.$options = parentOptions.createChild(modelOptionsDefinition);
-	    }
-	  };
-	
 	  return {
 	    restrict: 'A',
 	    // ngModelOptions needs to run before ngModel and input directives
 	    priority: 10,
-	    require: {parentCtrl: '?^^ngModelOptions'},
-	    bindToController: true,
-	    controller: NgModelOptionsController
+	    require: ['ngModelOptions', '?^^ngModelOptions'],
+	    controller: function NgModelOptionsController() {},
+	    link: {
+	      pre: function ngModelOptionsPreLinkFn(scope, element, attrs, ctrls) {
+	        var optionsCtrl = ctrls[0];
+	        var parentOptions = ctrls[1] ? ctrls[1].$options : defaultModelOptions;
+	        optionsCtrl.$options = parentOptions.createChild(scope.$eval(attrs.ngModelOptions));
+	      }
+	    }
 	  };
 	};
 	
@@ -30545,17 +30466,17 @@
 	
 	      } else {
 	
-	        selectCtrl.writeValue = function writeNgOptionsMultiple(values) {
-	          // Only set `<option>.selected` if necessary, in order to prevent some browsers from
-	          // scrolling to `<option>` elements that are outside the `<select>` element's viewport.
-	
-	          var selectedOptions = values && values.map(getAndUpdateSelectedOption) || [];
-	
+	        selectCtrl.writeValue = function writeNgOptionsMultiple(value) {
 	          options.items.forEach(function(option) {
-	            if (option.element.selected && !includes(selectedOptions, option)) {
-	              option.element.selected = false;
-	            }
+	            option.element.selected = false;
 	          });
+	
+	          if (value) {
+	            value.forEach(function(item) {
+	              var option = options.getOptionFromViewValue(item);
+	              if (option) option.element.selected = true;
+	            });
+	          }
 	        };
 	
 	
@@ -30645,14 +30566,6 @@
 	        updateOptionElement(option, optionElement);
 	      }
 	
-	      function getAndUpdateSelectedOption(viewValue) {
-	        var option = options.getOptionFromViewValue(viewValue);
-	        var element = option && option.element;
-	
-	        if (element && !element.selected) element.selected = true;
-	
-	        return option;
-	      }
 	
 	      function updateOptionElement(option, element) {
 	        option.element = element;
@@ -38298,7 +38211,7 @@
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.1
+	 * @license AngularJS v1.6.0
 	 * (c) 2010-2016 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
@@ -42745,7 +42658,7 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<ul id=\"slide-out\" class=\"side-nav fixed\"> <li class=\"profile\"> <ul> <li class=\"photo\"><img ng-src=\"{{::vm.profile.photo}}\"></li> <li class=\"name\"> <ul id=\"show-profile\" class=\"dropdown-content profile-content\"> <li><a href=\"#\">Профиль</a></li> <li><a href=\"#\">Настройки</a></li> <li><a href=\"#\">Помощь</a></li> <li><a href=\"#\">Выход</a></li> </ul> <a href=\"#!\" class=\"waves-effect waves-light dropdown-button\" data-activates=\"show-profile\"> <i class=\"fa fa-caret-down right\" aria-hidden=\"true\"></i>\n{{::vm.profile.firstName}} {{::vm.profile.lastName}} </a> </li> <li class=\"role\">{{::vm.profile.role}}</li> </ul> </li> <li><a ui-sref=\"dashboard\" class=\"waves-effect waves-teal logo\">Dashboard</a></li> <li><a ui-sref=\"categories({ subcategory: null })\" class=\"waves-effect waves-teal\">Категории</a></li> <li class=\"no-padding\"> <ul class=\"collapsible collapsible-accordion\"> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Товары</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" ui-sref=\"type-products\">Виды товаров</a></li> <li><a class=\"waves-effect\" href=\"#\">Списки</a></li> <li><a class=\"waves-effect\" href=\"#\">Ед. измерения</a></li> </ul> </div> </li> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Пользователи</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" href=\"#\">Список</a></li> <li><a class=\"waves-effect\" href=\"#\">Создать</a></li> <li><a class=\"waves-effect\" href=\"#\">Удалить</a></li> </ul> </div> </li> </ul> </li> </ul>";
+	var v1="<ul id=\"slide-out\" class=\"side-nav fixed\"> <li class=\"profile\"> <ul> <li class=\"photo\"><img ng-src=\"{{::vm.profile.photo}}\"></li> <li class=\"name\"> <ul id=\"show-profile\" class=\"dropdown-content profile-content\"> <li><a href=\"#\">Профиль</a></li> <li><a href=\"#\">Настройки</a></li> <li><a href=\"#\">Помощь</a></li> <li><a href=\"#\">Выход</a></li> </ul> <a href=\"#!\" class=\"waves-effect waves-light dropdown-button\" data-activates=\"show-profile\"> <i class=\"fa fa-caret-down right\" aria-hidden=\"true\"></i>\n{{::vm.profile.firstName}} {{::vm.profile.lastName}} </a> </li> <li class=\"role\">{{::vm.profile.role}}</li> </ul> </li> <li><a ui-sref=\"dashboard\" class=\"waves-effect waves-teal logo\">Dashboard</a></li> <li><a ui-sref=\"categories({ subcategory: null })\" class=\"waves-effect waves-teal\">Категории</a></li> <li class=\"no-padding\"> <ul class=\"collapsible collapsible-accordion\"> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Товары</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" ui-sref=\"type-products\">Виды товаров</a></li> <li><a class=\"waves-effect\" href=\"#\">Списки</a></li> <li><a class=\"waves-effect\" href=\"#\">Ед. измерения</a></li> </ul> </div> </li> <li class=\"bold\"> <a class=\"collapsible-header waves-effect waves-teal\">Пользователи</a> <div class=\"collapsible-body\"> <ul> <li><a class=\"waves-effect\" href=\"#\">Список</a></li> <li><a class=\"waves-effect\" href=\"#\">Создать</a></li> <li><a class=\"waves-effect\" href=\"#\">Удалить</a></li> </ul> </div> </li> </ul> </li> <li><a class=\"waves-effect waves-teal logo\">Новости</a></li> <li><a class=\"waves-effect waves-teal logo\">Акции</a></li> <li><a class=\"waves-effect waves-teal logo\">Статьи</a></li> <li><a class=\"waves-effect waves-teal logo\">Отделы сайта</a></li> </ul>";
 	ngModule.run(["$templateCache",function(c){c.put("_common/ms-sidenav/template.html",v1)}]);
 	module.exports=v1;
 
@@ -43593,6 +43506,7 @@
 	
 	    __webpack_require__(89);
 	    __webpack_require__(91)(app);
+	
 	    app.factory('TypeProductsFactory', __webpack_require__(96));
 	
 	    app.controller('typeProductsCtrl', __webpack_require__(97));
@@ -43646,7 +43560,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\r\n\t\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".header {\r\n\t\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}\r\n@media only screen and (max-width : 510px) and (min-width : 480px) {\r\n\t.collection.type-products .group-info-type-products {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.collection.type-products .group-info-type-products p {\r\n\t\twhite-space: nowrap;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
@@ -43943,13 +43857,15 @@
 	
 	module.exports = function typeProductsCtrl($rootScope, $timeout, $scope, $state, TypeProductsFactory) {
 	
-		var vm = this;
+		var vm = this,
+		    screenIsPhone = false;
 	
 		vm.typeProducts = [];
 	
 		vm.editTypeProduct = editTypeProduct;
 	
 		vm.selectCategory = selectCategory();
+		vm.selectedProduct = {};
 	
 		vm.typeProducts = TypeProductsFactory.get();
 	
@@ -43957,7 +43873,11 @@
 	
 		function setHeightTypeProducts() {
 			//if phone
-			if (document.documentElement.clientWidth > 480) return;
+			if (document.documentElement.clientWidth > 480) {
+				screenIsPhone = false;return;
+			}
+	
+			screenIsPhone = true;
 			// !!! Bad Code
 			$timeout(function () {
 	
@@ -43971,7 +43891,7 @@
 				//console.dir( heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
 				heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
 				collection.style.height = heightCollection + 'px';
-				console.log("Resize");
+				//console.log("Resize");
 			});
 		}
 	
@@ -44000,19 +43920,35 @@
 	
 		function selectCategory() {
 			var groupButtons = document.querySelector('.footer > .group-buttons'),
-			    oldCategoryId = null,
-			    isActiveButtons = false;
-			return function (category) {
+			    oldCategoryId = null;
+			return function (category, option) {
+				//option('select','edit','open')
+				option = option || 'select';
+				if (typeof category === 'object') vm.selectedProduct = category;
 	
-				if (oldCategoryId === category._id || oldCategoryId === null) {
+				if (!screenIsPhone) {
+	
+					$state.go("products", { semanticUrl: category.semanticUrl });
+					console.log("Desctop");
+					return;
+				}
+	
+				if (option === 'select') if (oldCategoryId === category._id || oldCategoryId === null) {
 					Array.prototype.forEach.call(groupButtons.children, function (val) {
-						console.dir(val);
+						//console.dir(val);
 						val.classList.toggle('disabled');
 						if (!val.classList.contains('disabled')) oldCategoryId = category._id;else oldCategoryId = null;
 					});
-				} else oldCategoryId = category._id;
-				//console.dir(groupButtons);
-				//console.log("Click on: " +category.name);
+				} else {
+					oldCategoryId = category._id;
+				}
+	
+				if (option === 'open') {
+	
+					$state.go("products", { semanticUrl: vm.selectedProduct.semanticUrl });
+				}
+	
+				if (option === 'edit') {}
 			};
 		}
 	
@@ -44052,8 +43988,262 @@
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">open_in_new</i><span>Показать таблицу</span></a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
+	var v1="<div class=\"header\"> <h1>Виды товаров</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"type-products.create\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection type-products\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"typeProduct in vm.typeProducts track by typeProduct._id\" ng-click=\"vm.selectCategory(typeProduct)\"> <div class=\"group-info-type-products\"> <img ng-src=\"/images/{{ typeProduct.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ typeProduct.name }}</span> <p>Id: {{ typeProduct._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(typeProduct, 'open')\"> <i class=\"material-icons left\">open_in_new</i><span>Показать таблицу</span> </a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/type_products/typeProducts.html",v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = function (app) {
+	
+	    __webpack_require__(100);
+	
+	    app.factory('ProductsFactory', __webpack_require__(102));
+	
+	    app.controller('productsCtrl', __webpack_require__(103));
+	
+	    app.config(function ($stateProvider) {
+	
+	        $stateProvider.state('products', {
+	            url: '/products/:semanticUrl',
+	            template: __webpack_require__(104),
+	            data: {
+	                label: "Товары",
+	                parent: "dashboard"
+	            },
+	            controller: 'productsCtrl as vm'
+	        });
+	    });
+	};
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(101);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".products.header {\r\n\t\r\n}\r\n.products.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.products.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.table.products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 580px) and (min-width: 480px) {\r\n\t.products.footer > .group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.products.footer > .group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.products.footer > .group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.products.footer > .group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) and (min-width: 580px) {\r\n\t.products.footer > .group-buttons > a {\r\n\t\tpadding: 0 10px !important;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) {\r\n\ttable.table th.group-buttons, table.table td.group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.table.products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.products.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.products.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.products.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.products.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 102 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function ProductsFactory($http) {
+	
+		var products = [],
+		    typeProduct = {},
+		    units = [];
+	
+		function getUnits() {
+	
+			return units;
+		}
+	
+		function getTypeProduct() {
+	
+			return typeProduct;
+		}
+	
+		function getProducts() {
+	
+			return products;
+		}
+	
+		function getProducts_TypeProduct(typeProductSemanticUrl) {
+	
+			return $http.get('admin/type-products/' + typeProductSemanticUrl);
+		}
+	
+		function setTypeProduct(data) {
+	
+			typeProduct = data;
+		}
+	
+		function setProducts(data) {
+	
+			products = data;
+		}
+	
+		function setUnits(data) {
+	
+			units = data;
+		}
+	
+		function addProduct(product) {
+	
+			products.push(product);
+		}
+	
+		return {
+			getProducts: getProducts,
+			getTypeProduct: getTypeProduct,
+			getProducts_TypeProduct: getProducts_TypeProduct,
+			getUnits: getUnits,
+			setUnits: setUnits,
+			setProducts: setProducts,
+			setTypeProduct: setTypeProduct,
+			addProduct: addProduct
+		};
+	};
+
+/***/ },
+/* 103 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function productsCtrl($timeout, $rootScope, $scope, $state, $stateParams, ProductsFactory) {
+	
+		var vm = this,
+		    screenIsPhone = false;
+	
+		vm.typeProductSemanticUrl = $stateParams.semanticUrl;
+	
+		vm.selectProduct = selectProduct();
+	
+		vm.typeProduct = ProductsFactory.getTypeProduct();
+	
+		vm.products = ProductsFactory.getProducts();
+	
+		vm.units = ProductsFactory.getUnits();
+	
+		vm.add = add;
+	
+		init();
+	
+		function init() {
+	
+			setHeightProducts();
+			window.addEventListener("resize", setHeightProducts);
+		}
+	
+		function close() {
+	
+			window.removeEventListener("resize", setHeightProducts);
+		}
+	
+		function setHeightProducts() {
+			//if phone
+			if (document.documentElement.clientWidth > 480) {
+				screenIsPhone = false;return;
+			}
+	
+			screenIsPhone = true;
+			// !!! Bad Code
+			$timeout(function () {
+	
+				var collection = document.querySelector('.table.products'),
+				    heightWindow = document.documentElement.clientHeight,
+				    heightFooter = document.querySelector('.footer').offsetHeight,
+				    topCollection = collection.getBoundingClientRect().top,
+				    colletMargBot = parseInt(getComputedStyle(collection).marginBottom),
+				    heightCollection;
+	
+				//console.dir( heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
+				heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
+				collection.style.height = heightCollection + 'px';
+				//console.log("Resize");
+			});
+		}
+	
+		function selectProduct() {
+			var groupButtons = document.querySelector('.products.footer > .group-buttons'),
+			    oldCategoryId = null;
+			return function (product) {
+	
+				if (oldCategoryId === product.id || oldCategoryId === null) {
+					Array.prototype.forEach.call(groupButtons.children, function (val) {
+	
+						val.classList.toggle('disabled');
+						if (!val.classList.contains('disabled')) oldCategoryId = product.id;else oldCategoryId = null;
+					});
+				} else {
+					oldCategoryId = product.id;
+				}
+			};
+		}
+	
+		function add($event) {
+	
+			$event.preventDefault();
+	
+			/*$state.go('type-products-products.create', {
+	  	typeProduct : vm.typeProduct
+	  });*/
+		}
+	
+		ProductsFactory.getProducts_TypeProduct(vm.typeProductSemanticUrl).then(function successCallback(response) {
+	
+			vm.products = response.data.products;
+			vm.typeProduct = response.data.typeProduct;
+			vm.units = response.data.units;
+	
+			ProductsFactory.setProducts(response.data.products);
+			ProductsFactory.setTypeProduct(response.data.typeProduct);
+			ProductsFactory.setUnits(response.data.units);
+			// console.log(vm.typeProduct);
+			// console.log(vm.units);
+			// console.log(response);
+		}, function errorCallback(response) {
+	
+			console.log(response);
+		});
+	
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+	
+			if (toState.name !== "products") {
+				close();
+			}
+		});
+	};
+
+/***/ },
+/* 104 */
+/***/ function(module, exports) {
+
+	var angular=window.angular,ngModule;
+	try {ngModule=angular.module(["ng"])}
+	catch(e){ngModule=angular.module("ng",[])}
+	var v1="<div class=\"products header\"> <h1>{{vm.typeProduct.name}}</h1> <div class=\"fixed-action-btn create-new-category\"> <a ng-click=\"vm.add($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <table class=\"highlight centered table products responsive-table\"> <thead> <tr> <th data-field=\"id\">Id</th> <th data-field=\"name\">Name</th> <th data-field=\"price\">Price</th> <th ng-repeat=\"field in vm.typeProduct.fields track by $index\" data-field=\"id\">{{ field.name + ((field.type.name === 'integer') ? ((field.type.unit) ? ' ('+vm.units[field.type.unit-1].name+')' : '') : '') }}</th> <th class=\"group-buttons\">Действие</th> </tr> </thead> <tbody> <tr ng-repeat=\"product in vm.products track by product.id\" ng-click=\"vm.selectProduct(product)\"> <td>{{ product.id }}</td> <td>{{ product.name }}</td> <td>{{ product.price }}</td> <td ng-repeat=\"field in product.fields track by $index\">{{ field }}</td> <td class=\"group-buttons\"> <div class=\"fixed-action-btn horizontal\"> <a class=\"btn-floating waves-effect waves-light btn-large red\"> <i class=\"large material-icons fa fa-outdent\"></i> </a> <ul> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">mode_edit</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">note_add</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"fa fa-trash material-icons\" aria-hidden=\"true\"></i></a></li> </ul> </div> </td> </tr> </tbody> </table> <ui-view></ui-view> <div class=\"products footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(typeProduct, 'open')\"> <i class=\"material-icons left\">open_in_new</i><span>Показать подробнее</span> </a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
+	ngModule.run(["$templateCache",function(c){c.put("src/products/products.html",v1)}]);
 	module.exports=v1;
 
 /***/ }
