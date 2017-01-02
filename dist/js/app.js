@@ -88,8 +88,8 @@
 	__webpack_require__(68)(app);
 	__webpack_require__(73)(app);
 	__webpack_require__(78)(app);
-	__webpack_require__(88)(app);
-	__webpack_require__(99)(app);
+	__webpack_require__(89)(app);
+	__webpack_require__(100)(app);
 	
 	app.run(function ($http, $httpBackend) {
 	
@@ -42813,7 +42813,7 @@
 	
 	
 	// module
-	exports.push([module.id, "ms-bread-crumbs li {\r\n  display: inline-block;\r\n  font-size: 18px;\r\n}\r\nms-bread-crumbs li::after {\r\n  content: '/';\r\n  display: inline-block;\r\n  margin: 0 10px;\r\n  color: #999;\r\n}\r\nms-bread-crumbs li:last-child::after {\r\n  display: none;\r\n}\r\nms-bread-crumbs li:last-child a{\r\n\tcolor: #999;\r\n\tcursor: default;\r\n}", ""]);
+	exports.push([module.id, "@media only screen and (max-width : 480px) {\r\n\tms-bread-crumbs > ul {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t}\r\n}\r\nms-bread-crumbs > ul {\r\n  \r\n}\r\nms-bread-crumbs li {\r\n  display: inline-block;\r\n  font-size: 18px;\r\n}\r\nms-bread-crumbs li::after {\r\n  content: '/';\r\n  display: inline-block;\r\n  margin: 0 10px;\r\n  color: #999;\r\n}\r\nms-bread-crumbs li:last-child::after {\r\n  display: none;\r\n}\r\nms-bread-crumbs li:last-child a{\r\n\tcolor: #999;\r\n\tcursor: default;\r\n}", ""]);
 	
 	// exports
 
@@ -42943,7 +42943,7 @@
 																																											ancestor.state = 'categories({subcategory: "' + val._id + '"})';
 																																											scope.states.push(ancestor);
 																																					});
-																																					console.log(ancestors);
+																																					//console.log(ancestors);
 																															}
 	
 																															/*
@@ -43200,14 +43200,15 @@
 	
 	    __webpack_require__(79);
 	    __webpack_require__(81)(app);
+	    __webpack_require__(86)(app);
 	
-	    app.controller('categoriesCtrl', __webpack_require__(86));
+	    app.controller('categoriesCtrl', __webpack_require__(87));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('categories', {
 	            url: '/categories?subcategory',
-	            template: __webpack_require__(87),
+	            template: __webpack_require__(88),
 	            data: {
 	                label: "Категории",
 	                parent: "dashboard"
@@ -43252,7 +43253,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".category-paranga {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: -130px;\r\n\tleft: -370px;\r\n\tright: 0;\r\n\tbottom: -300px;\r\n\twidth: 173%;\r\n\tmargin: auto;\r\n\tmargin-top: -300px;\r\n\tmargin-right: -300px;\r\n\tmargin-bottom: -500px;\r\n\topacity: .3;\r\n\tz-index: 1;\r\n\tbackground-color: #000;\r\n}\r\n@media only screen and (max-width : 1300px) {\r\n\t.category-paranga {\r\n\t\tright: 150px;\r\n\t}\r\n}\r\n\r\n.collection.categories {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.categories > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category > * {\r\n\t\r\n}\r\n.collection.categories > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 75%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n}\r\n@media only screen and (max-width : 725px) and (min-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0 5px;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin-right: 5px;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".category-paranga {\r\n\tdisplay: none;\r\n\tposition: absolute;\r\n\ttop: -130px;\r\n\tleft: -370px;\r\n\tright: 0;\r\n\tbottom: -300px;\r\n\twidth: 173%;\r\n\tmargin: auto;\r\n\tmargin-top: -300px;\r\n\tmargin-right: -300px;\r\n\tmargin-bottom: -500px;\r\n\topacity: .3;\r\n\tz-index: 1;\r\n\tbackground-color: #000;\r\n}\r\n@media only screen and (max-width : 1300px) {\r\n\t.category-paranga {\r\n\t\tright: 150px;\r\n\t}\r\n}\r\n\r\n.collection.categories {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.categories > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.categories > .collection-item.avatar > .group-info-category > * {\r\n\t\r\n}\r\n.collection.categories > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 75%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.collection.categories .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n\tms-bread-crumbs ul > li {\r\n\t\tdisplay: none;\r\n\t}\r\n\tms-bread-crumbs li:last-child {\r\n\t\tdisplay: inline-block;\r\n\t\tcursor: pointer;\r\n\t\tvertical-align: 8px;\r\n\t}\r\n\tms-bread-crumbs li:nth-last-child(2) {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin-right: 20px;\r\n\t}\r\n\tms-bread-crumbs li:nth-last-child(2)::after {\r\n\t\tdisplay: none;\r\n\t}\r\n\tms-bread-crumbs li:nth-last-child(2) a:last-child {\r\n\t\tcontent: url( data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQ0NC44MjIgNDQ0LjgyMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ0LjgyMiA0NDQuODIyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTQyMy4yNjUsMTc4LjI5OGMtNi4xOS03LjEzOS0xNC4yMjktMTAuNzA3LTI0LjEyNi0xMC43MDdIMTk4LjE0OEwyODEuOCw4My45MzdjNy4yMzQtNy4yMjksMTAuODQ4LTE1Ljg5MSwxMC44NDgtMjUuOTgxICAgYzAtMTAuMDg1LTMuNjEzLTE4Ljc0Ny0xMC44NDgtMjUuOTc5bC0yMS40MTMtMjEuMTI5QzI1My4xNTYsMy42MTksMjQ0LjU5LDAsMjM0LjY5MywwYy0xMC4wODksMC0xOC43NTIsMy42MTUtMjUuOTgxLDEwLjg0OCAgIEwyMi44NDgsMTk2LjQyOGMtNy4wNDMsNy40MjMtMTAuNTY0LDE2LjA4NC0xMC41NjQsMjUuOTgxYzAsMTAuMDg5LDMuNTIxLDE4LjY1NCwxMC41NjQsMjUuNjkzbDE4NS44NjQsMTg2LjE1MiAgIGM3LjQyMiw3LjA0MywxNi4wODMsMTAuNTY3LDI1Ljk4MSwxMC41NjdjMTAuMDg1LDAsMTguNjUtMy41MjQsMjUuNjkzLTEwLjU2N2wyMS40MTMtMjEuNjkzICAgYzcuMjM0LTYuODUxLDEwLjg0OC0xNS40MiwxMC44NDgtMjUuNjkzYzAtMTAuMjg0LTMuNjEzLTE4Ljg1My0xMC44NDgtMjUuN2wtODMuNjUyLTgzLjkzOWgyMDAuOTkxICAgYzkuODk2LDAsMTcuOTM2LTMuNTY5LDI0LjEyNi0xMC43MDdjNi4xODQtNy4xMzksOS4yNzQtMTUuNzQ5LDkuMjc0LTI1LjgzOHYtMzYuNTQ1ICAgQzQzMi41NDIsMTk0LjA1LDQyOS40NDgsMTg1LjQzNyw0MjMuMjY1LDE3OC4yOTh6IiBmaWxsPSIjMDM5YmU1Ii8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg== );\r\n\t\tposition: relative;\r\n\t\tleft: 5px;\r\n\t\ttransform: scale(1.3);\r\n\t\tpadding: 6px;\r\n\t}\r\n}\r\n@media only screen and (max-width : 725px) and (min-width : 480px) {\r\n\t.collection.categories > .collection-item.avatar > .group-info-category {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.group-buttons {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n\t.group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0 5px;\r\n\t}\r\n\t.group-buttons a i {\r\n\t\tmargin-right: 5px;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
@@ -43441,27 +43442,138 @@
 
 /***/ },
 /* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = function editeCategory(app) {
+	
+	    __webpack_require__(106);
+	
+	    app.factory('EditCategoryFactory', __webpack_require__(108));
+	    app.controller('editCategoryCtrl', __webpack_require__(109));
+	
+	    app.config(function ($stateProvider) {
+	
+	        $stateProvider.state('categories.edit', {
+	            url: '/edit/:id',
+	            template: __webpack_require__(110),
+	            params: {
+	                category: null
+	            },
+	            controller: 'editCategoryCtrl as vm'
+	        });
+	    });
+	};
+
+/***/ },
+/* 87 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
-	module.exports = function ($state, $stateParams, $rootScope, CategoriesFactory) {
+	module.exports = function ($timeout, $state, $stateParams, $rootScope, CategoriesFactory) {
 	
 		var categories = CategoriesFactory.get();
 	
-		var vm = this;
+		var vm = this,
+		    screenIsPhone = false;
 	
-		vm.hasTable = hasTable;
+		vm.editCategory = editCategory;
+	
+		vm.selectCategory = selectCategory();
+		vm.selectedCategory = {};
 	
 		vm.createCategory = createCategory;
 	
 		var subcategory = $stateParams.subcategory;
 	
-		function hasTable(e, category) {
+		init();
 	
-			if (category.hasOwnProperty("table_id")) {
-				e.preventDefault();
+		function init() {
+	
+			setHeightCategories();
+			window.addEventListener("resize", setHeightCategories);
+		}
+	
+		function close() {
+	
+			window.removeEventListener("resize", setHeightCategories);
+		}
+	
+		function setHeightCategories() {
+			//if phone
+			if (document.documentElement.clientWidth > 480) {
+				screenIsPhone = false;return;
 			}
+	
+			screenIsPhone = true;
+			// !!! Bad Code
+			$timeout(function () {
+	
+				var collection = document.querySelector('.collection.categories'),
+				    heightWindow = document.documentElement.clientHeight,
+				    heightFooter = document.querySelector('.footer').offsetHeight,
+				    topCollection = collection.getBoundingClientRect().top,
+				    colletMargBot = parseInt(getComputedStyle(collection).marginBottom),
+				    heightCollection;
+	
+				//console.dir( heightWindow + '	::   ' + topCollection + '   :   ' + heightFooter + '   :   ' + colletMargBot);
+				heightCollection = heightWindow - topCollection - heightFooter - colletMargBot;
+				collection.style.height = heightCollection + 'px';
+				//console.log("Resize");
+			});
+		}
+	
+		function selectCategory() {
+			var groupButtons = document.querySelector('.footer > .group-buttons'),
+			    oldCategoryId = null;
+	
+			return function (category, option) {
+				option = option || 'select';
+	
+				if (typeof category === 'object') vm.selectedCategory = category;
+	
+				if (!screenIsPhone) {
+	
+					if (category.hasOwnProperty("table_id")) return;
+					$state.go("categories", { subcategory: category._id });
+					console.log("Desctop");
+					return;
+				}
+	
+				if (option === 'select') if (oldCategoryId === category._id || oldCategoryId === null) {
+					Array.prototype.forEach.call(groupButtons.children, function (val) {
+	
+						val.classList.toggle('disabled');
+						if (!val.classList.contains('disabled')) oldCategoryId = category._id;else oldCategoryId = null;
+					});
+				} else {
+					oldCategoryId = category._id;
+				}
+	
+				if (option === 'open') {
+					if (vm.selectedCategory.hasOwnProperty("table_id")) return;
+					$state.go("categories", { subcategory: vm.selectedCategory._id });
+				}
+	
+				if (option === 'edit') {
+					$state.go('categories.edit', {
+						id: vm.selectedCategory._id,
+						category: vm.selectedCategory
+					});
+				}
+			};
+		}
+	
+		function editCategory($event, category) {
+	
+			$event.stopPropagation();
+			$event.preventDefault();
+			$state.go('categories.edit', {
+				id: category._id,
+				category: category
+			});
 		}
 	
 		function createCategory($event) {
@@ -43483,39 +43595,46 @@
 		}
 	
 		$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, options) {});
+	
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+	
+			if (toState.name !== "categories") {
+				close();
+			}
+		});
 	};
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<h1>Categories</h1> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ui-sref=\"categories({ subcategory: '{{category._id}}' })\" ng-click=\"vm.hasTable($event, category)\"> <div class=\"group-info-category\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> <div class=\"category-paranga\"></div>";
+	var v1="<div class=\"header\"> <h1>Categories</h1> <div class=\"fixed-action-btn create-new-category\"> <a ui-sref=\"#\" ng-click=\"vm.createCategory($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <ul class=\"collection categories\"> <li class=\"waves-effect collection-item avatar\" ng-repeat=\"category in vm.categories track by category._id\" ng-click=\"vm.selectCategory(category)\"> <div class=\"group-info-category\"> <img ng-src=\"/dist/images/{{ category.logotype }}\" alt=\"\" class=\"circle\">\n<span class=\"title\">{{ category.name }}</span> <p>Id: {{ category._id }}</p> </div> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn\" ng-click=\"vm.editCategory($event, category)\"> <i class=\"material-icons left\">mode_edit</i><span>Редактировать</span> </a>\n<a class=\"waves-effect waves-light btn\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </li> </ul> <ui-view></ui-view> <div class=\"footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(category, 'edit')\"> <i class=\"material-icons left\">mode_edit</i><span>Редактировать</span> </a>\n<a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(category, 'open')\"> <i class=\"material-icons left\">open_in_new</i><span>Открыть</span> </a>\n<a class=\"waves-effect waves-light btn disabled\"> <i class=\"material-icons left\">delete</i><span>Удалить</span> </a> </div> </div> <div class=\"category-paranga\"></div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/categories/categories.html",v1)}]);
 	module.exports=v1;
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(89);
-	    __webpack_require__(91)(app);
+	    __webpack_require__(90);
+	    __webpack_require__(92)(app);
 	
-	    app.factory('TypeProductsFactory', __webpack_require__(96));
+	    app.factory('TypeProductsFactory', __webpack_require__(97));
 	
-	    app.controller('typeProductsCtrl', __webpack_require__(97));
+	    app.controller('typeProductsCtrl', __webpack_require__(98));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('type-products', {
 	            url: '/type-products',
-	            template: __webpack_require__(98),
+	            template: __webpack_require__(99),
 	            data: {
 	                label: "Виды товаров",
 	                parent: "dashboard"
@@ -43526,13 +43645,13 @@
 	};
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(90);
+	var content = __webpack_require__(91);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43552,7 +43671,7 @@
 	}
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43560,41 +43679,41 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\r\n\t\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}\r\n@media only screen and (max-width : 510px) and (min-width : 480px) {\r\n\t.collection.type-products .group-info-type-products {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.collection.type-products .group-info-type-products p {\r\n\t\twhite-space: nowrap;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, "/*.header {\r\n\t\r\n}\r\n.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}*/\r\n.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.collection.type-products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.collection.type-products > .collection-item.avatar {\r\n\ttext-align: justify;\r\n\theight: 100px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products {\r\n\tdisplay: inline-block;\r\n\tvertical-align: 20px;\r\n}\r\n.collection.type-products > .collection-item.avatar > .group-info-type-products > * {\r\n\t\r\n}\r\n.collection.type-products > .collection-item.avatar::after {\r\n\tcontent: '';\r\n\tdisplay: inline-block;\r\n\twidth: 100%;\r\n\theight: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 480px) {\r\n\t.collection.type-products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.collection.type-products .group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\t/*.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}*/\r\n\t.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}\r\n@media only screen and (max-width : 510px) and (min-width : 480px) {\r\n\t.collection.type-products .group-info-type-products {\r\n\t\twidth: 50%;\r\n\t\toverflow-x: hidden;\r\n\t}\r\n\t.collection.type-products .group-info-type-products p {\r\n\t\twhite-space: nowrap;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function createTypeProduct(app) {
 	
-	    __webpack_require__(92);
+	    __webpack_require__(93);
 	
-	    app.controller('createTypeProductCtrl', __webpack_require__(94));
+	    app.controller('createTypeProductCtrl', __webpack_require__(95));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('type-products.create', {
 	            url: '/create',
-	            template: __webpack_require__(95),
+	            template: __webpack_require__(96),
 	            controller: 'createTypeProductCtrl as vm'
 	        });
 	    });
 	};
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(93);
+	var content = __webpack_require__(94);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -43614,7 +43733,7 @@
 	}
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -43628,7 +43747,7 @@
 
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43719,7 +43838,7 @@
 	};
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43730,7 +43849,7 @@
 	module.exports=v1;
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43850,7 +43969,7 @@
 	};
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43982,7 +44101,7 @@
 	};
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
@@ -43993,24 +44112,24 @@
 	module.exports=v1;
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	module.exports = function (app) {
 	
-	    __webpack_require__(100);
+	    __webpack_require__(101);
 	
-	    app.factory('ProductsFactory', __webpack_require__(102));
+	    app.factory('ProductsFactory', __webpack_require__(103));
 	
-	    app.controller('productsCtrl', __webpack_require__(103));
+	    app.controller('productsCtrl', __webpack_require__(104));
 	
 	    app.config(function ($stateProvider) {
 	
 	        $stateProvider.state('products', {
 	            url: '/products/:semanticUrl',
-	            template: __webpack_require__(104),
+	            template: __webpack_require__(105),
 	            data: {
 	                label: "Товары",
 	                parent: "dashboard"
@@ -44021,13 +44140,13 @@
 	};
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(101);
+	var content = __webpack_require__(102);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(5)(content, {});
@@ -44047,7 +44166,7 @@
 	}
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
@@ -44055,13 +44174,13 @@
 	
 	
 	// module
-	exports.push([module.id, ".products.header {\r\n\t\r\n}\r\n.products.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.products.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.table.products {\r\n\tdisplay: block;\r\n\tpadding: 0;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 580px) and (min-width: 480px) {\r\n\t.products.footer > .group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.products.footer > .group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.products.footer > .group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.products.footer > .group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) and (min-width: 580px) {\r\n\t.products.footer > .group-buttons > a {\r\n\t\tpadding: 0 10px !important;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) {\r\n\ttable.table th.group-buttons, table.table td.group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.table.products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.products.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 80px;\r\n\t}\r\n\t.products.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category {\r\n\t\tposition: static;\r\n\t\tdisplay: inline-block;\r\n\t\ttop: 40px;\r\n\t\tbottom: 0;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category a {\r\n\t\twidth: 50px;\r\n\t\theight: 50px;\r\n\t}\r\n\t.products.header > .fixed-action-btn.create-new-category a i {\r\n\t\tline-height: 50px;\r\n\t}\r\n\t.products.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.products.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, ".products.header {\r\n\t\r\n}\r\n.products.header > h1 {\r\n\tfont-size: 35px;\r\n\tvertical-align: middle;\r\n}\r\n.products.footer {\r\n\tdisplay: none;\r\n\theight: 60px;\r\n\twidth: 100px;\r\n}\r\n.products > .pagination {\r\n\tdisplay: none;\r\n}\r\n.group-buttons {\r\n\tdisplay: inline-block;\r\n}\r\n.group-buttons a {\r\n\tdisplay: block;\r\n\tposition: static;\r\n}\r\n.group-buttons a:first-child {\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n@media only screen and (max-width : 580px) and (min-width: 480px) {\r\n\t.products.footer > .group-buttons {\r\n\t\tmargin-top: -8px;\r\n\t}\r\n\t.products.footer > .group-buttons a {\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\twidth: 45px;\r\n\t\theight: 45px;\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.products.footer > .group-buttons a span{\r\n\t\tdisplay: none;\r\n\t}\r\n\t.products.footer > .group-buttons a i {\r\n\t\tmargin: 0;\r\n\t\tmargin-top: 5px;\r\n\t\twidth: 100%;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) and (min-width: 580px) {\r\n\t.products.footer > .group-buttons > a {\r\n\t\tpadding: 0 10px !important;\r\n\t}\r\n}\r\n@media only screen and (max-width : 992px) {\r\n\ttable.table th.group-buttons, table.table td.group-buttons {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.table.products {\r\n\t\theight: 420px;\r\n\t\toverflow-y: auto;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.products.header {\r\n\t\ttext-align: justify;\r\n\t\theight: 40px;\r\n\t}\r\n\t.products.header:after {\r\n\t\tdisplay: inline-block;\r\n\t\tcontent: '';\r\n\t\theight: 0;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.header > h1 {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 0;\r\n\t\tfont-size: 28px;\r\n\t}\r\n\t.products.header > .pagination {\r\n\t\tposition: relative;\r\n\t\tdisplay: inline-block;\r\n\t\tright: -24px;\r\n\t\tmargin: 0;\r\n\t\twidth: auto;\r\n\t}\r\n\t.products.footer {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons {\r\n\t\ttext-align: justify;\r\n\t\twidth: 100%;\r\n\t}\r\n\t.products.footer > .group-buttons:after {\r\n\t\tcontent: '';\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 100%;\r\n\t\theight: 0;\r\n\t}\r\n\t.products.footer > .group-buttons > a {\r\n\t\tposition: relative;\r\n\t\ttop: 10px;\r\n\t\tdisplay: inline-block;\r\n\t\tvertical-align: middle;\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t}\r\n}\r\n@media only screen and (min-width: 992px) {\r\n\t.products.header > .pagination {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.products > .pagination {\r\n\t\tdisplay: block;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44125,7 +44244,7 @@
 	};
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44236,14 +44355,224 @@
 	};
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports) {
 
 	var angular=window.angular,ngModule;
 	try {ngModule=angular.module(["ng"])}
 	catch(e){ngModule=angular.module("ng",[])}
-	var v1="<div class=\"products header\"> <h1>{{vm.typeProduct.name}}</h1> <div class=\"fixed-action-btn create-new-category\"> <a ng-click=\"vm.add($event)\" class=\"btn-floating btn-large waves-effect waves-light red\"> <i class=\"material-icons\">add</i> </a> </div> </div> <table class=\"highlight centered table products responsive-table\"> <thead> <tr> <th data-field=\"id\">Id</th> <th data-field=\"name\">Name</th> <th data-field=\"price\">Price</th> <th ng-repeat=\"field in vm.typeProduct.fields track by $index\" data-field=\"id\">{{ field.name + ((field.type.name === 'integer') ? ((field.type.unit) ? ' ('+vm.units[field.type.unit-1].name+')' : '') : '') }}</th> <th class=\"group-buttons\">Действие</th> </tr> </thead> <tbody> <tr ng-repeat=\"product in vm.products track by product.id\" ng-click=\"vm.selectProduct(product)\"> <td>{{ product.id }}</td> <td>{{ product.name }}</td> <td>{{ product.price }}</td> <td ng-repeat=\"field in product.fields track by $index\">{{ field }}</td> <td class=\"group-buttons\"> <div class=\"fixed-action-btn horizontal\"> <a class=\"btn-floating waves-effect waves-light btn-large red\"> <i class=\"large material-icons fa fa-outdent\"></i> </a> <ul> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">mode_edit</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">note_add</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"fa fa-trash material-icons\" aria-hidden=\"true\"></i></a></li> </ul> </div> </td> </tr> </tbody> </table> <ui-view></ui-view> <div class=\"products footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(typeProduct, 'open')\"> <i class=\"material-icons left\">open_in_new</i><span>Показать подробнее</span> </a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div>";
+	var v1="<div class=\"products header\"> <h1>{{vm.typeProduct.name}}</h1> <ul class=\"pagination\"> <li class=\"disabled\"><a href=\"#!\"><i class=\"material-icons\">chevron_left</i></a></li> <li class=\"active\"><a href=\"#!\">1</a></li> <li class=\"waves-effect\"><a href=\"#!\"><i class=\"material-icons\">chevron_right</i></a></li> </ul> </div> <table class=\"highlight centered table products responsive-table\"> <thead> <tr> <th data-field=\"id\">Id</th> <th data-field=\"name\">Name</th> <th data-field=\"price\">Price</th> <th ng-repeat=\"field in vm.typeProduct.fields track by $index\" data-field=\"id\">{{ field.name + ((field.type.name === 'integer') ? ((field.type.unit) ? ' ('+vm.units[field.type.unit-1].name+')' : '') : '') }}</th> <th class=\"group-buttons\">Действие</th> </tr> </thead> <tbody> <tr ng-repeat=\"product in vm.products track by product.id\" ng-click=\"vm.selectProduct(product)\"> <td>{{ product.id }}</td> <td>{{ product.name }}</td> <td>{{ product.price }}</td> <td ng-repeat=\"field in product.fields track by $index\">{{ field }}</td> <td class=\"group-buttons\"> <div class=\"fixed-action-btn horizontal\"> <a class=\"btn-floating waves-effect waves-light btn-large red\"> <i class=\"large material-icons fa fa-outdent\"></i> </a> <ul> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">mode_edit</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"material-icons\">note_add</i></a></li> <li><a class=\"btn-floating deep-orange\"><i class=\"fa fa-trash material-icons\" aria-hidden=\"true\"></i></a></li> </ul> </div> </td> </tr> </tbody> </table> <ui-view></ui-view> <div class=\"products footer\"> <div class=\"group-buttons\"> <a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">mode_edit</i><span>Редактировать</span></a>\n<a class=\"waves-effect waves-light btn disabled\" ng-click=\"vm.selectCategory(typeProduct, 'open')\"> <i class=\"material-icons left\">open_in_new</i><span>Показать подробнее</span> </a>\n<a class=\"waves-effect waves-light btn disabled\"><i class=\"material-icons left\">delete</i><span>Удалить</span></a> </div> </div> <div class=\"products\"> <ul class=\"pagination\"> <li class=\"disabled\"><a href=\"#!\"><i class=\"material-icons\">chevron_left</i></a></li> <li class=\"active\"><a href=\"#!\">1</a></li> <li class=\"waves-effect\"><a href=\"#!\"><i class=\"material-icons\">chevron_right</i></a></li> </ul> </div>";
 	ngModule.run(["$templateCache",function(c){c.put("src/products/products.html",v1)}]);
+	module.exports=v1;
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(107);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/autoprefixer-loader/index.js?browsers=last 2 versions!./styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 108 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function CategoriesFactory($http) {
+	
+		function getListProducts() {
+	
+			return $http.post('admin' + '/type-products');
+		}
+	
+		function editCategory(data) {
+	
+			var fd = new FormData();
+	
+			for (var key in data) {
+				fd.append(key, data[key]);
+			}
+	
+			return $http.post('admin' + '/categories/edit/' + data._id, fd, {
+				headers: {
+					'Content-Type': undefined
+				},
+				transformRequest: angular.identity
+	
+			});
+		}
+	
+		return {
+			getListProducts: getListProducts,
+			editCategory: editCategory
+		};
+	};
+
+/***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(106);
+	
+	module.exports = function editCategoryCtrl($state, $scope, $rootScope, $timeout, EditCategoryFactory, TypeProductsFactory, CategoriesFactory) {
+	
+		var vm = this,
+		    modelHeightCreate;
+	
+		vm.category = $state.params.category; // Обьект под новую категорию
+	
+		vm.closeModalCategory = closeModalCategory;
+	
+		vm.editCategorySubmit = editCategorySubmit;
+	
+		vm.listProducts = TypeProductsFactory.get();
+	
+		loadModal();
+		/*
+	  *@run modal window "Create Category"
+	  */
+		function loadModal() {
+	
+			$('select').select2();
+			$('.input-field.select2 span.select2').css("width", "");
+	
+			$('#modal-new-category').openModal();
+			$('#slide-out').css('z-index', '1');
+			$('nav.top-nav.fixed').css('z-index', '1');
+	
+			// For set paranga
+			$timeout(function () {
+				$('.paranga').css('display', 'block');
+			}, 300);
+			//  Second query no found property offsetHeight
+			setHeightParanga();
+		}
+		/*
+	  *@run setting css style height parange
+	  */
+		function setHeightParanga() {
+	
+			try {
+				modelHeightCreate = document.querySelector('#modal-new-category').offsetHeight;
+				console.log(document.querySelector('#modal-new-category').offsetHeight);
+			} catch (e) {
+				modelHeightCreate = CategoriesFactory.getModelHeightCreate();
+			}
+			if (modelHeightCreate) {
+				CategoriesFactory.setModelHeightCreate(modelHeightCreate);
+			}
+			$('.paranga').css('bottom', modelHeightCreate + 'px');
+		}
+	
+		document.querySelector('.paranga').onclick = function (e) {
+			closeModal('categories');
+		};
+	
+		/*
+	  *@close modal window "Create Category"
+	  */
+		function closeModal(state) {
+	
+			$('#modal-new-category').closeModal();
+			$('#slide-out').css('z-index', '');
+			$('nav.top-nav.fixed').css('z-index', '');
+	
+			// For set paranga
+			$('.paranga').css('display', '');
+			$('.paranga').css('bottom', '');
+	
+			window.removeEventListener("resize", resizeEditCategory);
+	
+			$timeout(function () {
+				$state.go(state);
+			}, 200);
+		}
+	
+		window.addEventListener("resize", resizeEditCategory);
+	
+		function resizeEditCategory() {
+			setHeightParanga();
+		}
+	
+		function closeModalCategory($event) {
+	
+			if ($event) $event.preventDefault();
+			closeModal("categories");
+		}
+	
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+	
+			if (toState.name === "categories.edit") {
+				loadModal();
+			} else {
+				closeModal(toState.name);
+			}
+		});
+	
+		function editCategorySubmit() {
+	
+			EditCategoryFactory.editCategory(vm.category).success(function (editCategory) {
+	
+				//console.log( category );
+				closeEditCategory(null);
+				$scope.$emit('editCategoryRenderView', vm.category);
+			}).error(function () {});
+		};
+	
+		// Фильтруем semanticUrl исользование латинских букв и знака "-"
+		$('input#semantic-url').keypress(function (event) {
+			if (event.originalEvent.key === '-' || event.originalEvent.key === '_') {
+				return;
+			} else if (!(event.which >= 97 && event.which <= 122)) {
+				event.preventDefault();
+			}
+		});
+	};
+
+/***/ },
+/* 110 */
+/***/ function(module, exports) {
+
+	var angular=window.angular,ngModule;
+	try {ngModule=angular.module(["ng"])}
+	catch(e){ngModule=angular.module("ng",[])}
+	var v1="<div id=\"modal-new-category\" class=\"modal bottom-sheet\"> <div class=\"modal-content\"> <div class=\"row\"> <div class=\"col s4 offset-s2\"> <h4>Редактировать категорию</h4> <form action=\"#\"> <div class=\"input-field\"> <input id=\"name\" type=\"text\" class=\"validate\" ng-model=\"vm.category.name\">  <label class=\"active\" for=\"name\">Название</label> </div> <div class=\"input-field select2\"> <label>Materialize Select</label> <select ng-model=\"vm.category.table_id\"> <option value=\"\" ng-selected=\"!vm.category.hasOwnProperty(table_id)\">Без привязки к таблице</option> <option ng-repeat=\"product in vm.listProducts\" ng-selected=\"{{product._id == vm.category.table_id}}\" value=\"{{product._id}}\"> {{product.name}} </option> </select> </div> <div class=\"input-field\"> <input id=\"semantic-url\" type=\"text\" class=\"validate\" ng-model=\"vm.category.semanticUrl\">  <label class=\"active\" for=\"semantic-url\">ЧПУ URL</label> </div> <div class=\"file-field input-field\"> <div class=\"btn\"> <span>Картинка</span> \n<input type=\"file\" file-model=\"vm.category.logotype\"> </div> <div class=\"file-path-wrapper\"> <input class=\"file-path validate\" type=\"text\" placeholder=\"Загрузить изображение\"> </div> </div> <div class=\"input-field\"> <a class=\"waves-effect waves-light btn\" ng-click=\"vm.editCategorySubmit()\">Сохранить изменения</a> </div> </form> </div> </div> </div> <div class=\"modal-footer\"> <a ui-sref=\"#\" ng-click=\"vm.closeModalCategory($event)\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Back</a> </div> </div> <div class=\"modal-overlay\"></div>";
+	ngModule.run(["$templateCache",function(c){c.put("categories/editCategory/edit.html",v1)}]);
 	module.exports=v1;
 
 /***/ }

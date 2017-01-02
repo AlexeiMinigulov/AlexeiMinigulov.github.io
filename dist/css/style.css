@@ -22,6 +22,48 @@ main .container {
 main > .container {
   overflow: hidden;   /* For mobile css createTypeProducts*/
 }
+.header {
+  
+}
+.header > h1 {
+  font-size: 35px;
+  vertical-align: middle;
+}
+@media only screen and (max-width : 480px) {
+
+  .header {
+    text-align: justify;
+    height: 48px;
+  }
+  .header:after {
+    display: inline-block;
+    content: '';
+    height: 0;
+    width: 100%;
+  }
+  .header > h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 20px;
+    vertical-align: 13px;
+  }
+  .header > .fixed-action-btn.create-new-category {
+    position: static;
+    display: inline-block;
+    top: 40px;
+    bottom: 0;
+    vertical-align: 18px;
+    padding: 0;
+  }
+  .header > .fixed-action-btn.create-new-category a {
+    width: 50px;
+    height: 50px;
+  }
+  .header > .fixed-action-btn.create-new-category a i {
+    line-height: 50px;
+  }
+
+}
 @media only screen and (max-width : 992px) {
   main .container {
     left: 0;
@@ -83,7 +125,9 @@ main > .container {
 .collection li {
   display: block;
 }
-
+main .container .collection > li:first-child > * {
+  white-space: nowrap;
+}
 
 .side-nav.fixed {     /* Для левой навигации */
   z-index: 500;
