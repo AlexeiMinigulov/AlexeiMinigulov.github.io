@@ -40,7 +40,14 @@ module.exports = {
             angular: "angular/angular.min.js",
             materialize: "materialize-css/dist/js/materialize.min.js"*/
         }),
-        new ExtractTextPlugin("../css/style.css")
+        new ExtractTextPlugin("../css/style.css"),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
     ],
 
 
