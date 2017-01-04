@@ -63,7 +63,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: [ path.resolve(__dirname, 'src/common.css') ],
+                exclude: [ 
+                            path.resolve(__dirname, 'src/common.css'),
+                            path.resolve(__dirname, 'src/app.css')
+                         ],
                 loader: 'style!css!autoprefixer?browsers=last 2 versions'
             },
             {
