@@ -129,9 +129,6 @@ main .container .collection > li:first-child > * {
   white-space: nowrap;
 }
 
-.side-nav.fixed {     /* Для левой навигации */
-  z-index: 500;
-}
 
 
 .modal-overlay/* паранжа */
